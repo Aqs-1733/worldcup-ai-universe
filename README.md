@@ -4,6 +4,57 @@
 
 这是一个世界杯智能球迷平台，包含 FastAPI 后端、React 前端、SQLAlchemy 数据层、LangGraph 多 Agent 路由、ChromaDB RAG、新闻可信度规则分析、OpenCV 启发式视觉分析、PNG 海报生成和球迷画像推荐。项目默认不依赖外网模型即可启动；配置 ARK 后，部分问答、创作和解释能力会获得大模型增强。
 
+## 给别人直接运行
+
+Windows 用户拿到仓库后，按下面三步即可启动网站：
+
+```powershell
+git clone https://github.com/Aqs-1733/worldcup-ai-universe.git
+cd worldcup-ai-universe
+.\RUN_WEBSITE.bat
+```
+
+脚本会自动：
+
+- 从 `.env.example` 复制出本地 `.env`。
+- 从 `frontend/.env.example` 复制出本地 `frontend/.env`。
+- 安装后端依赖 `uv sync`。
+- 安装前端依赖 `pnpm install`。
+- 启动 FastAPI 后端和 Vite 前端。
+- 打开网站入口 `http://127.0.0.1:5173`。
+
+如果第一次运行正在安装依赖，浏览器可能先显示打不开，等两个终端窗口安装完成后刷新页面即可。
+
+必须先安装：
+
+- Git
+- Python 3.12+
+- Node.js 20+
+- uv
+- pnpm
+
+常用测试命令：
+
+```powershell
+cd worldcup-ai-universe
+uv run pytest -q
+
+cd frontend
+pnpm build
+```
+
+不配置 API Key 也能打开网站、看页面、跑数据库初始化、基础赛程/球队/球员/本地分析功能。若要启用真实 AI 问答、新闻翻译、AI 生图，把自己的火山方舟配置写入本地 `.env`，不要提交 `.env` 到 GitHub：
+
+```env
+ARK_API_KEY=你的火山方舟Key
+ARK_OPENAI_BASE_URL=https://ark.cn-beijing.volces.com/api/v3
+ARK_MODEL=doubao-seed-2-1-pro-260628
+ARK_IMAGE_MODEL=doubao-seedream-4-5-251128
+ARK_IMAGE_BASE_URL=https://ark.cn-beijing.volces.com/api/v3
+ARK_IMAGE_SIZE=2K
+ARK_IMAGE_RESPONSE_FORMAT=b64_json
+```
+
 ## 真实技术架构
 
 - 后端：Python 3.12、FastAPI、SQLAlchemy、SQLite，PostgreSQL 可通过 SQLAlchemy URL 切换并自行安装驱动。

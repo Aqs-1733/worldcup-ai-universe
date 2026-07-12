@@ -1,11 +1,13 @@
 @echo off
 setlocal
 cd /d "%~dp0"
+chcp 65001 >nul
+title WorldCup AI Universe Launcher
 
 where uv >nul 2>nul
 if errorlevel 1 (
   echo [ERROR] uv is not installed or not in PATH.
-  echo Install uv first, then run this script again.
+  echo Install uv first: https://docs.astral.sh/uv/getting-started/installation/
   pause
   exit /b 1
 )
@@ -13,7 +15,7 @@ if errorlevel 1 (
 where pnpm >nul 2>nul
 if errorlevel 1 (
   echo [ERROR] pnpm is not installed or not in PATH.
-  echo Install pnpm first, then run this script again.
+  echo Install pnpm first: corepack enable ^&^& corepack prepare pnpm@11.7.0 --activate
   pause
   exit /b 1
 )
@@ -24,6 +26,13 @@ if not exist .env (
     echo Created .env from .env.example. Fill API keys only if you need online model features.
   ) else (
     echo [WARN] .env.example was not found; backend will use built-in defaults.
+  )
+)
+
+if not exist frontend\.env (
+  if exist frontend\.env.example (
+    copy frontend\.env.example frontend\.env >nul
+    echo Created frontend\.env from frontend\.env.example.
   )
 )
 
@@ -46,4 +55,6 @@ start "WorldCup AI Frontend" cmd /k "cd /d "%~dp0frontend" && set "VITE_BACKEND_
 echo Backend: http://127.0.0.1:%BACKEND_PORT%/docs
 echo Frontend: http://127.0.0.1:5173
 echo Close the two opened terminal windows to stop the services.
+echo The browser will open now. If dependencies are still installing, refresh the page after a minute.
+start "" "http://127.0.0.1:5173"
 endlocal

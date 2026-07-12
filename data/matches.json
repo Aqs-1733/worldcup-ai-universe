@@ -1,0 +1,2906 @@
+[
+  {
+    "stage": "小组赛",
+    "group_name": "A组",
+    "home_team": "墨西哥",
+    "away_team": "南非",
+    "home_flag": "🇲🇽",
+    "away_flag": "🇿🇦",
+    "kickoff": "2026-06-11T18:00:00+00:00",
+    "venue": "墨西哥城体育场",
+    "status": "finished",
+    "home_score": 2,
+    "away_score": 0,
+    "home_penalties": null,
+    "away_penalties": null,
+    "minute": 90,
+    "stats": {
+      "possession": [
+        45,
+        55
+      ],
+      "shots": [
+        14,
+        7
+      ],
+      "corners": [
+        7,
+        5
+      ],
+      "data_source": "platform_seed"
+    }
+  },
+  {
+    "stage": "小组赛",
+    "group_name": "A组",
+    "home_team": "韩国",
+    "away_team": "捷克",
+    "home_flag": "🇰🇷",
+    "away_flag": "🇨🇿",
+    "kickoff": "2026-06-11T21:00:00+00:00",
+    "venue": "多伦多体育场",
+    "status": "finished",
+    "home_score": 1,
+    "away_score": 0,
+    "home_penalties": null,
+    "away_penalties": null,
+    "minute": 90,
+    "stats": {
+      "possession": [
+        54,
+        46
+      ],
+      "shots": [
+        12,
+        11
+      ],
+      "corners": [
+        7,
+        4
+      ],
+      "data_source": "platform_seed"
+    }
+  },
+  {
+    "stage": "小组赛",
+    "group_name": "A组",
+    "home_team": "墨西哥",
+    "away_team": "韩国",
+    "home_flag": "🇲🇽",
+    "away_flag": "🇰🇷",
+    "kickoff": "2026-06-12T18:00:00+00:00",
+    "venue": "洛杉矶体育场",
+    "status": "finished",
+    "home_score": 2,
+    "away_score": 0,
+    "home_penalties": null,
+    "away_penalties": null,
+    "minute": 90,
+    "stats": {
+      "possession": [
+        47,
+        53
+      ],
+      "shots": [
+        10,
+        12
+      ],
+      "corners": [
+        6,
+        6
+      ],
+      "data_source": "platform_seed"
+    }
+  },
+  {
+    "stage": "小组赛",
+    "group_name": "A组",
+    "home_team": "南非",
+    "away_team": "捷克",
+    "home_flag": "🇿🇦",
+    "away_flag": "🇨🇿",
+    "kickoff": "2026-06-12T21:00:00+00:00",
+    "venue": "纽约新泽西体育场",
+    "status": "finished",
+    "home_score": 3,
+    "away_score": 1,
+    "home_penalties": null,
+    "away_penalties": null,
+    "minute": 90,
+    "stats": {
+      "possession": [
+        45,
+        55
+      ],
+      "shots": [
+        7,
+        16
+      ],
+      "corners": [
+        2,
+        4
+      ],
+      "data_source": "platform_seed"
+    }
+  },
+  {
+    "stage": "小组赛",
+    "group_name": "A组",
+    "home_team": "墨西哥",
+    "away_team": "捷克",
+    "home_flag": "🇲🇽",
+    "away_flag": "🇨🇿",
+    "kickoff": "2026-06-13T18:00:00+00:00",
+    "venue": "达拉斯体育场",
+    "status": "finished",
+    "home_score": 3,
+    "away_score": 0,
+    "home_penalties": null,
+    "away_penalties": null,
+    "minute": 90,
+    "stats": {
+      "possession": [
+        51,
+        49
+      ],
+      "shots": [
+        17,
+        8
+      ],
+      "corners": [
+        6,
+        5
+      ],
+      "data_source": "platform_seed"
+    }
+  },
+  {
+    "stage": "小组赛",
+    "group_name": "A组",
+    "home_team": "南非",
+    "away_team": "韩国",
+    "home_flag": "🇿🇦",
+    "away_flag": "🇰🇷",
+    "kickoff": "2026-06-13T21:00:00+00:00",
+    "venue": "休斯敦体育场",
+    "status": "finished",
+    "home_score": 0,
+    "away_score": 1,
+    "home_penalties": null,
+    "away_penalties": null,
+    "minute": 90,
+    "stats": {
+      "possession": [
+        58,
+        42
+      ],
+      "shots": [
+        13,
+        8
+      ],
+      "corners": [
+        7,
+        7
+      ],
+      "data_source": "platform_seed"
+    }
+  },
+  {
+    "stage": "小组赛",
+    "group_name": "B组",
+    "home_team": "加拿大",
+    "away_team": "波黑",
+    "home_flag": "🇨🇦",
+    "away_flag": "🇧🇦",
+    "kickoff": "2026-06-13T19:00:00+00:00",
+    "venue": "多伦多体育场",
+    "status": "finished",
+    "home_score": 3,
+    "away_score": 0,
+    "home_penalties": null,
+    "away_penalties": null,
+    "minute": 90,
+    "stats": {
+      "possession": [
+        43,
+        57
+      ],
+      "shots": [
+        12,
+        8
+      ],
+      "corners": [
+        7,
+        5
+      ],
+      "data_source": "platform_seed"
+    }
+  },
+  {
+    "stage": "小组赛",
+    "group_name": "B组",
+    "home_team": "卡塔尔",
+    "away_team": "瑞士",
+    "home_flag": "🇶🇦",
+    "away_flag": "🇨🇭",
+    "kickoff": "2026-06-13T22:00:00+00:00",
+    "venue": "洛杉矶体育场",
+    "status": "finished",
+    "home_score": 2,
+    "away_score": 0,
+    "home_penalties": null,
+    "away_penalties": null,
+    "minute": 90,
+    "stats": {
+      "possession": [
+        44,
+        56
+      ],
+      "shots": [
+        16,
+        10
+      ],
+      "corners": [
+        2,
+        2
+      ],
+      "data_source": "platform_seed"
+    }
+  },
+  {
+    "stage": "小组赛",
+    "group_name": "B组",
+    "home_team": "加拿大",
+    "away_team": "卡塔尔",
+    "home_flag": "🇨🇦",
+    "away_flag": "🇶🇦",
+    "kickoff": "2026-06-14T19:00:00+00:00",
+    "venue": "纽约新泽西体育场",
+    "status": "finished",
+    "home_score": 1,
+    "away_score": 0,
+    "home_penalties": null,
+    "away_penalties": null,
+    "minute": 90,
+    "stats": {
+      "possession": [
+        50,
+        50
+      ],
+      "shots": [
+        15,
+        10
+      ],
+      "corners": [
+        2,
+        4
+      ],
+      "data_source": "platform_seed"
+    }
+  },
+  {
+    "stage": "小组赛",
+    "group_name": "B组",
+    "home_team": "波黑",
+    "away_team": "瑞士",
+    "home_flag": "🇧🇦",
+    "away_flag": "🇨🇭",
+    "kickoff": "2026-06-14T22:00:00+00:00",
+    "venue": "达拉斯体育场",
+    "status": "finished",
+    "home_score": 2,
+    "away_score": 0,
+    "home_penalties": null,
+    "away_penalties": null,
+    "minute": 90,
+    "stats": {
+      "possession": [
+        48,
+        52
+      ],
+      "shots": [
+        9,
+        8
+      ],
+      "corners": [
+        6,
+        8
+      ],
+      "data_source": "platform_seed"
+    }
+  },
+  {
+    "stage": "小组赛",
+    "group_name": "B组",
+    "home_team": "加拿大",
+    "away_team": "瑞士",
+    "home_flag": "🇨🇦",
+    "away_flag": "🇨🇭",
+    "kickoff": "2026-06-15T19:00:00+00:00",
+    "venue": "休斯敦体育场",
+    "status": "finished",
+    "home_score": 3,
+    "away_score": 0,
+    "home_penalties": null,
+    "away_penalties": null,
+    "minute": 90,
+    "stats": {
+      "possession": [
+        45,
+        55
+      ],
+      "shots": [
+        15,
+        6
+      ],
+      "corners": [
+        4,
+        8
+      ],
+      "data_source": "platform_seed"
+    }
+  },
+  {
+    "stage": "小组赛",
+    "group_name": "B组",
+    "home_team": "波黑",
+    "away_team": "卡塔尔",
+    "home_flag": "🇧🇦",
+    "away_flag": "🇶🇦",
+    "kickoff": "2026-06-15T22:00:00+00:00",
+    "venue": "亚特兰大体育场",
+    "status": "finished",
+    "home_score": 0,
+    "away_score": 0,
+    "home_penalties": null,
+    "away_penalties": null,
+    "minute": 90,
+    "stats": {
+      "possession": [
+        55,
+        45
+      ],
+      "shots": [
+        12,
+        11
+      ],
+      "corners": [
+        3,
+        6
+      ],
+      "data_source": "platform_seed"
+    }
+  },
+  {
+    "stage": "小组赛",
+    "group_name": "C组",
+    "home_team": "巴西",
+    "away_team": "海地",
+    "home_flag": "🇧🇷",
+    "away_flag": "🇭🇹",
+    "kickoff": "2026-06-15T20:00:00+00:00",
+    "venue": "洛杉矶体育场",
+    "status": "finished",
+    "home_score": 3,
+    "away_score": 2,
+    "home_penalties": null,
+    "away_penalties": null,
+    "minute": 90,
+    "stats": {
+      "possession": [
+        55,
+        45
+      ],
+      "shots": [
+        9,
+        14
+      ],
+      "corners": [
+        4,
+        6
+      ],
+      "data_source": "platform_seed"
+    }
+  },
+  {
+    "stage": "小组赛",
+    "group_name": "C组",
+    "home_team": "苏格兰",
+    "away_team": "摩洛哥",
+    "home_flag": "🏴",
+    "away_flag": "🇲🇦",
+    "kickoff": "2026-06-15T23:00:00+00:00",
+    "venue": "纽约新泽西体育场",
+    "status": "finished",
+    "home_score": 3,
+    "away_score": 1,
+    "home_penalties": null,
+    "away_penalties": null,
+    "minute": 90,
+    "stats": {
+      "possession": [
+        42,
+        58
+      ],
+      "shots": [
+        7,
+        12
+      ],
+      "corners": [
+        7,
+        2
+      ],
+      "data_source": "platform_seed"
+    }
+  },
+  {
+    "stage": "小组赛",
+    "group_name": "C组",
+    "home_team": "巴西",
+    "away_team": "苏格兰",
+    "home_flag": "🇧🇷",
+    "away_flag": "🏴",
+    "kickoff": "2026-06-16T20:00:00+00:00",
+    "venue": "达拉斯体育场",
+    "status": "finished",
+    "home_score": 0,
+    "away_score": 1,
+    "home_penalties": null,
+    "away_penalties": null,
+    "minute": 90,
+    "stats": {
+      "possession": [
+        42,
+        58
+      ],
+      "shots": [
+        15,
+        10
+      ],
+      "corners": [
+        7,
+        7
+      ],
+      "data_source": "platform_seed"
+    }
+  },
+  {
+    "stage": "小组赛",
+    "group_name": "C组",
+    "home_team": "海地",
+    "away_team": "摩洛哥",
+    "home_flag": "🇭🇹",
+    "away_flag": "🇲🇦",
+    "kickoff": "2026-06-16T23:00:00+00:00",
+    "venue": "休斯敦体育场",
+    "status": "finished",
+    "home_score": 2,
+    "away_score": 1,
+    "home_penalties": null,
+    "away_penalties": null,
+    "minute": 90,
+    "stats": {
+      "possession": [
+        56,
+        44
+      ],
+      "shots": [
+        13,
+        8
+      ],
+      "corners": [
+        3,
+        4
+      ],
+      "data_source": "platform_seed"
+    }
+  },
+  {
+    "stage": "小组赛",
+    "group_name": "C组",
+    "home_team": "巴西",
+    "away_team": "摩洛哥",
+    "home_flag": "🇧🇷",
+    "away_flag": "🇲🇦",
+    "kickoff": "2026-06-17T20:00:00+00:00",
+    "venue": "亚特兰大体育场",
+    "status": "finished",
+    "home_score": 1,
+    "away_score": 0,
+    "home_penalties": null,
+    "away_penalties": null,
+    "minute": 90,
+    "stats": {
+      "possession": [
+        50,
+        50
+      ],
+      "shots": [
+        12,
+        14
+      ],
+      "corners": [
+        6,
+        4
+      ],
+      "data_source": "platform_seed"
+    }
+  },
+  {
+    "stage": "小组赛",
+    "group_name": "C组",
+    "home_team": "海地",
+    "away_team": "苏格兰",
+    "home_flag": "🇭🇹",
+    "away_flag": "🏴",
+    "kickoff": "2026-06-17T23:00:00+00:00",
+    "venue": "西雅图体育场",
+    "status": "finished",
+    "home_score": 1,
+    "away_score": 0,
+    "home_penalties": null,
+    "away_penalties": null,
+    "minute": 90,
+    "stats": {
+      "possession": [
+        46,
+        54
+      ],
+      "shots": [
+        7,
+        9
+      ],
+      "corners": [
+        7,
+        3
+      ],
+      "data_source": "platform_seed"
+    }
+  },
+  {
+    "stage": "小组赛",
+    "group_name": "D组",
+    "home_team": "美国",
+    "away_team": "巴拉圭",
+    "home_flag": "🇺🇸",
+    "away_flag": "🇵🇾",
+    "kickoff": "2026-06-17T18:00:00+00:00",
+    "venue": "纽约新泽西体育场",
+    "status": "finished",
+    "home_score": 3,
+    "away_score": 1,
+    "home_penalties": null,
+    "away_penalties": null,
+    "minute": 90,
+    "stats": {
+      "possession": [
+        50,
+        50
+      ],
+      "shots": [
+        18,
+        11
+      ],
+      "corners": [
+        2,
+        4
+      ],
+      "data_source": "platform_seed"
+    }
+  },
+  {
+    "stage": "小组赛",
+    "group_name": "D组",
+    "home_team": "澳大利亚",
+    "away_team": "土耳其",
+    "home_flag": "🇦🇺",
+    "away_flag": "🇹🇷",
+    "kickoff": "2026-06-17T21:00:00+00:00",
+    "venue": "达拉斯体育场",
+    "status": "finished",
+    "home_score": 2,
+    "away_score": 1,
+    "home_penalties": null,
+    "away_penalties": null,
+    "minute": 90,
+    "stats": {
+      "possession": [
+        42,
+        58
+      ],
+      "shots": [
+        10,
+        7
+      ],
+      "corners": [
+        3,
+        5
+      ],
+      "data_source": "platform_seed"
+    }
+  },
+  {
+    "stage": "小组赛",
+    "group_name": "D组",
+    "home_team": "美国",
+    "away_team": "澳大利亚",
+    "home_flag": "🇺🇸",
+    "away_flag": "🇦🇺",
+    "kickoff": "2026-06-18T18:00:00+00:00",
+    "venue": "休斯敦体育场",
+    "status": "finished",
+    "home_score": 1,
+    "away_score": 2,
+    "home_penalties": null,
+    "away_penalties": null,
+    "minute": 90,
+    "stats": {
+      "possession": [
+        54,
+        46
+      ],
+      "shots": [
+        9,
+        16
+      ],
+      "corners": [
+        2,
+        8
+      ],
+      "data_source": "platform_seed"
+    }
+  },
+  {
+    "stage": "小组赛",
+    "group_name": "D组",
+    "home_team": "巴拉圭",
+    "away_team": "土耳其",
+    "home_flag": "🇵🇾",
+    "away_flag": "🇹🇷",
+    "kickoff": "2026-06-18T21:00:00+00:00",
+    "venue": "亚特兰大体育场",
+    "status": "finished",
+    "home_score": 0,
+    "away_score": 0,
+    "home_penalties": null,
+    "away_penalties": null,
+    "minute": 90,
+    "stats": {
+      "possession": [
+        50,
+        50
+      ],
+      "shots": [
+        14,
+        8
+      ],
+      "corners": [
+        7,
+        4
+      ],
+      "data_source": "platform_seed"
+    }
+  },
+  {
+    "stage": "小组赛",
+    "group_name": "D组",
+    "home_team": "美国",
+    "away_team": "土耳其",
+    "home_flag": "🇺🇸",
+    "away_flag": "🇹🇷",
+    "kickoff": "2026-06-19T18:00:00+00:00",
+    "venue": "西雅图体育场",
+    "status": "finished",
+    "home_score": 3,
+    "away_score": 0,
+    "home_penalties": null,
+    "away_penalties": null,
+    "minute": 90,
+    "stats": {
+      "possession": [
+        42,
+        58
+      ],
+      "shots": [
+        17,
+        16
+      ],
+      "corners": [
+        3,
+        5
+      ],
+      "data_source": "platform_seed"
+    }
+  },
+  {
+    "stage": "小组赛",
+    "group_name": "D组",
+    "home_team": "巴拉圭",
+    "away_team": "澳大利亚",
+    "home_flag": "🇵🇾",
+    "away_flag": "🇦🇺",
+    "kickoff": "2026-06-19T21:00:00+00:00",
+    "venue": "波士顿体育场",
+    "status": "finished",
+    "home_score": 1,
+    "away_score": 1,
+    "home_penalties": null,
+    "away_penalties": null,
+    "minute": 90,
+    "stats": {
+      "possession": [
+        44,
+        56
+      ],
+      "shots": [
+        11,
+        10
+      ],
+      "corners": [
+        4,
+        4
+      ],
+      "data_source": "platform_seed"
+    }
+  },
+  {
+    "stage": "小组赛",
+    "group_name": "E组",
+    "home_team": "德国",
+    "away_team": "科特迪瓦",
+    "home_flag": "🇩🇪",
+    "away_flag": "🇨🇮",
+    "kickoff": "2026-06-19T19:00:00+00:00",
+    "venue": "达拉斯体育场",
+    "status": "finished",
+    "home_score": 1,
+    "away_score": 2,
+    "home_penalties": null,
+    "away_penalties": null,
+    "minute": 90,
+    "stats": {
+      "possession": [
+        44,
+        56
+      ],
+      "shots": [
+        14,
+        13
+      ],
+      "corners": [
+        5,
+        2
+      ],
+      "data_source": "platform_seed"
+    }
+  },
+  {
+    "stage": "小组赛",
+    "group_name": "E组",
+    "home_team": "厄瓜多尔",
+    "away_team": "库拉索",
+    "home_flag": "🇪🇨",
+    "away_flag": "🇨🇼",
+    "kickoff": "2026-06-19T22:00:00+00:00",
+    "venue": "休斯敦体育场",
+    "status": "finished",
+    "home_score": 1,
+    "away_score": 2,
+    "home_penalties": null,
+    "away_penalties": null,
+    "minute": 90,
+    "stats": {
+      "possession": [
+        45,
+        55
+      ],
+      "shots": [
+        10,
+        14
+      ],
+      "corners": [
+        7,
+        6
+      ],
+      "data_source": "platform_seed"
+    }
+  },
+  {
+    "stage": "小组赛",
+    "group_name": "E组",
+    "home_team": "德国",
+    "away_team": "厄瓜多尔",
+    "home_flag": "🇩🇪",
+    "away_flag": "🇪🇨",
+    "kickoff": "2026-06-20T19:00:00+00:00",
+    "venue": "亚特兰大体育场",
+    "status": "finished",
+    "home_score": 3,
+    "away_score": 1,
+    "home_penalties": null,
+    "away_penalties": null,
+    "minute": 90,
+    "stats": {
+      "possession": [
+        47,
+        53
+      ],
+      "shots": [
+        12,
+        7
+      ],
+      "corners": [
+        6,
+        3
+      ],
+      "data_source": "platform_seed"
+    }
+  },
+  {
+    "stage": "小组赛",
+    "group_name": "E组",
+    "home_team": "科特迪瓦",
+    "away_team": "库拉索",
+    "home_flag": "🇨🇮",
+    "away_flag": "🇨🇼",
+    "kickoff": "2026-06-20T22:00:00+00:00",
+    "venue": "西雅图体育场",
+    "status": "finished",
+    "home_score": 2,
+    "away_score": 1,
+    "home_penalties": null,
+    "away_penalties": null,
+    "minute": 90,
+    "stats": {
+      "possession": [
+        51,
+        49
+      ],
+      "shots": [
+        9,
+        16
+      ],
+      "corners": [
+        2,
+        6
+      ],
+      "data_source": "platform_seed"
+    }
+  },
+  {
+    "stage": "小组赛",
+    "group_name": "E组",
+    "home_team": "德国",
+    "away_team": "库拉索",
+    "home_flag": "🇩🇪",
+    "away_flag": "🇨🇼",
+    "kickoff": "2026-06-21T19:00:00+00:00",
+    "venue": "波士顿体育场",
+    "status": "finished",
+    "home_score": 0,
+    "away_score": 1,
+    "home_penalties": null,
+    "away_penalties": null,
+    "minute": 90,
+    "stats": {
+      "possession": [
+        43,
+        57
+      ],
+      "shots": [
+        12,
+        16
+      ],
+      "corners": [
+        7,
+        2
+      ],
+      "data_source": "platform_seed"
+    }
+  },
+  {
+    "stage": "小组赛",
+    "group_name": "E组",
+    "home_team": "科特迪瓦",
+    "away_team": "厄瓜多尔",
+    "home_flag": "🇨🇮",
+    "away_flag": "🇪🇨",
+    "kickoff": "2026-06-21T22:00:00+00:00",
+    "venue": "迈阿密体育场",
+    "status": "finished",
+    "home_score": 2,
+    "away_score": 1,
+    "home_penalties": null,
+    "away_penalties": null,
+    "minute": 90,
+    "stats": {
+      "possession": [
+        43,
+        57
+      ],
+      "shots": [
+        17,
+        16
+      ],
+      "corners": [
+        5,
+        3
+      ],
+      "data_source": "platform_seed"
+    }
+  },
+  {
+    "stage": "小组赛",
+    "group_name": "F组",
+    "home_team": "荷兰",
+    "away_team": "瑞典",
+    "home_flag": "🇳🇱",
+    "away_flag": "🇸🇪",
+    "kickoff": "2026-06-21T20:00:00+00:00",
+    "venue": "休斯敦体育场",
+    "status": "finished",
+    "home_score": 2,
+    "away_score": 2,
+    "home_penalties": null,
+    "away_penalties": null,
+    "minute": 90,
+    "stats": {
+      "possession": [
+        43,
+        57
+      ],
+      "shots": [
+        18,
+        11
+      ],
+      "corners": [
+        4,
+        8
+      ],
+      "data_source": "platform_seed"
+    }
+  },
+  {
+    "stage": "小组赛",
+    "group_name": "F组",
+    "home_team": "突尼斯",
+    "away_team": "日本",
+    "home_flag": "🇹🇳",
+    "away_flag": "🇯🇵",
+    "kickoff": "2026-06-21T23:00:00+00:00",
+    "venue": "亚特兰大体育场",
+    "status": "finished",
+    "home_score": 1,
+    "away_score": 2,
+    "home_penalties": null,
+    "away_penalties": null,
+    "minute": 90,
+    "stats": {
+      "possession": [
+        57,
+        43
+      ],
+      "shots": [
+        13,
+        12
+      ],
+      "corners": [
+        6,
+        6
+      ],
+      "data_source": "platform_seed"
+    }
+  },
+  {
+    "stage": "小组赛",
+    "group_name": "F组",
+    "home_team": "荷兰",
+    "away_team": "突尼斯",
+    "home_flag": "🇳🇱",
+    "away_flag": "🇹🇳",
+    "kickoff": "2026-06-22T20:00:00+00:00",
+    "venue": "西雅图体育场",
+    "status": "finished",
+    "home_score": 2,
+    "away_score": 1,
+    "home_penalties": null,
+    "away_penalties": null,
+    "minute": 90,
+    "stats": {
+      "possession": [
+        56,
+        44
+      ],
+      "shots": [
+        14,
+        8
+      ],
+      "corners": [
+        5,
+        5
+      ],
+      "data_source": "platform_seed"
+    }
+  },
+  {
+    "stage": "小组赛",
+    "group_name": "F组",
+    "home_team": "瑞典",
+    "away_team": "日本",
+    "home_flag": "🇸🇪",
+    "away_flag": "🇯🇵",
+    "kickoff": "2026-06-22T23:00:00+00:00",
+    "venue": "波士顿体育场",
+    "status": "finished",
+    "home_score": 1,
+    "away_score": 1,
+    "home_penalties": null,
+    "away_penalties": null,
+    "minute": 90,
+    "stats": {
+      "possession": [
+        48,
+        52
+      ],
+      "shots": [
+        16,
+        6
+      ],
+      "corners": [
+        5,
+        4
+      ],
+      "data_source": "platform_seed"
+    }
+  },
+  {
+    "stage": "小组赛",
+    "group_name": "F组",
+    "home_team": "荷兰",
+    "away_team": "日本",
+    "home_flag": "🇳🇱",
+    "away_flag": "🇯🇵",
+    "kickoff": "2026-06-23T20:00:00+00:00",
+    "venue": "迈阿密体育场",
+    "status": "finished",
+    "home_score": 1,
+    "away_score": 0,
+    "home_penalties": null,
+    "away_penalties": null,
+    "minute": 90,
+    "stats": {
+      "possession": [
+        50,
+        50
+      ],
+      "shots": [
+        11,
+        15
+      ],
+      "corners": [
+        3,
+        5
+      ],
+      "data_source": "platform_seed"
+    }
+  },
+  {
+    "stage": "小组赛",
+    "group_name": "F组",
+    "home_team": "瑞典",
+    "away_team": "突尼斯",
+    "home_flag": "🇸🇪",
+    "away_flag": "🇹🇳",
+    "kickoff": "2026-06-23T23:00:00+00:00",
+    "venue": "堪萨斯城体育场",
+    "status": "finished",
+    "home_score": 2,
+    "away_score": 1,
+    "home_penalties": null,
+    "away_penalties": null,
+    "minute": 90,
+    "stats": {
+      "possession": [
+        54,
+        46
+      ],
+      "shots": [
+        13,
+        17
+      ],
+      "corners": [
+        4,
+        7
+      ],
+      "data_source": "platform_seed"
+    }
+  },
+  {
+    "stage": "小组赛",
+    "group_name": "G组",
+    "home_team": "比利时",
+    "away_team": "伊朗",
+    "home_flag": "🇧🇪",
+    "away_flag": "🇮🇷",
+    "kickoff": "2026-06-23T18:00:00+00:00",
+    "venue": "亚特兰大体育场",
+    "status": "finished",
+    "home_score": 1,
+    "away_score": 0,
+    "home_penalties": null,
+    "away_penalties": null,
+    "minute": 90,
+    "stats": {
+      "possession": [
+        46,
+        54
+      ],
+      "shots": [
+        17,
+        11
+      ],
+      "corners": [
+        3,
+        4
+      ],
+      "data_source": "platform_seed"
+    }
+  },
+  {
+    "stage": "小组赛",
+    "group_name": "G组",
+    "home_team": "新西兰",
+    "away_team": "埃及",
+    "home_flag": "🇳🇿",
+    "away_flag": "🇪🇬",
+    "kickoff": "2026-06-23T21:00:00+00:00",
+    "venue": "西雅图体育场",
+    "status": "finished",
+    "home_score": 2,
+    "away_score": 1,
+    "home_penalties": null,
+    "away_penalties": null,
+    "minute": 90,
+    "stats": {
+      "possession": [
+        48,
+        52
+      ],
+      "shots": [
+        16,
+        15
+      ],
+      "corners": [
+        3,
+        5
+      ],
+      "data_source": "platform_seed"
+    }
+  },
+  {
+    "stage": "小组赛",
+    "group_name": "G组",
+    "home_team": "比利时",
+    "away_team": "新西兰",
+    "home_flag": "🇧🇪",
+    "away_flag": "🇳🇿",
+    "kickoff": "2026-06-24T18:00:00+00:00",
+    "venue": "波士顿体育场",
+    "status": "finished",
+    "home_score": 2,
+    "away_score": 2,
+    "home_penalties": null,
+    "away_penalties": null,
+    "minute": 90,
+    "stats": {
+      "possession": [
+        48,
+        52
+      ],
+      "shots": [
+        17,
+        12
+      ],
+      "corners": [
+        6,
+        2
+      ],
+      "data_source": "platform_seed"
+    }
+  },
+  {
+    "stage": "小组赛",
+    "group_name": "G组",
+    "home_team": "伊朗",
+    "away_team": "埃及",
+    "home_flag": "🇮🇷",
+    "away_flag": "🇪🇬",
+    "kickoff": "2026-06-24T21:00:00+00:00",
+    "venue": "迈阿密体育场",
+    "status": "finished",
+    "home_score": 2,
+    "away_score": 1,
+    "home_penalties": null,
+    "away_penalties": null,
+    "minute": 90,
+    "stats": {
+      "possession": [
+        48,
+        52
+      ],
+      "shots": [
+        9,
+        14
+      ],
+      "corners": [
+        4,
+        8
+      ],
+      "data_source": "platform_seed"
+    }
+  },
+  {
+    "stage": "小组赛",
+    "group_name": "G组",
+    "home_team": "比利时",
+    "away_team": "埃及",
+    "home_flag": "🇧🇪",
+    "away_flag": "🇪🇬",
+    "kickoff": "2026-06-25T18:00:00+00:00",
+    "venue": "堪萨斯城体育场",
+    "status": "finished",
+    "home_score": 2,
+    "away_score": 1,
+    "home_penalties": null,
+    "away_penalties": null,
+    "minute": 90,
+    "stats": {
+      "possession": [
+        56,
+        44
+      ],
+      "shots": [
+        15,
+        15
+      ],
+      "corners": [
+        3,
+        7
+      ],
+      "data_source": "platform_seed"
+    }
+  },
+  {
+    "stage": "小组赛",
+    "group_name": "G组",
+    "home_team": "伊朗",
+    "away_team": "新西兰",
+    "home_flag": "🇮🇷",
+    "away_flag": "🇳🇿",
+    "kickoff": "2026-06-25T21:00:00+00:00",
+    "venue": "温哥华体育场",
+    "status": "finished",
+    "home_score": 2,
+    "away_score": 1,
+    "home_penalties": null,
+    "away_penalties": null,
+    "minute": 90,
+    "stats": {
+      "possession": [
+        56,
+        44
+      ],
+      "shots": [
+        8,
+        16
+      ],
+      "corners": [
+        7,
+        2
+      ],
+      "data_source": "platform_seed"
+    }
+  },
+  {
+    "stage": "小组赛",
+    "group_name": "H组",
+    "home_team": "乌拉圭",
+    "away_team": "佛得角",
+    "home_flag": "🇺🇾",
+    "away_flag": "🇨🇻",
+    "kickoff": "2026-06-25T19:00:00+00:00",
+    "venue": "西雅图体育场",
+    "status": "finished",
+    "home_score": 2,
+    "away_score": 1,
+    "home_penalties": null,
+    "away_penalties": null,
+    "minute": 90,
+    "stats": {
+      "possession": [
+        55,
+        45
+      ],
+      "shots": [
+        11,
+        6
+      ],
+      "corners": [
+        5,
+        6
+      ],
+      "data_source": "platform_seed"
+    }
+  },
+  {
+    "stage": "小组赛",
+    "group_name": "H组",
+    "home_team": "西班牙",
+    "away_team": "沙特阿拉伯",
+    "home_flag": "🇪🇸",
+    "away_flag": "🇸🇦",
+    "kickoff": "2026-06-25T22:00:00+00:00",
+    "venue": "波士顿体育场",
+    "status": "finished",
+    "home_score": 2,
+    "away_score": 0,
+    "home_penalties": null,
+    "away_penalties": null,
+    "minute": 90,
+    "stats": {
+      "possession": [
+        51,
+        49
+      ],
+      "shots": [
+        13,
+        12
+      ],
+      "corners": [
+        5,
+        7
+      ],
+      "data_source": "platform_seed"
+    }
+  },
+  {
+    "stage": "小组赛",
+    "group_name": "H组",
+    "home_team": "乌拉圭",
+    "away_team": "西班牙",
+    "home_flag": "🇺🇾",
+    "away_flag": "🇪🇸",
+    "kickoff": "2026-06-26T19:00:00+00:00",
+    "venue": "迈阿密体育场",
+    "status": "finished",
+    "home_score": 2,
+    "away_score": 2,
+    "home_penalties": null,
+    "away_penalties": null,
+    "minute": 90,
+    "stats": {
+      "possession": [
+        57,
+        43
+      ],
+      "shots": [
+        16,
+        9
+      ],
+      "corners": [
+        3,
+        6
+      ],
+      "data_source": "platform_seed"
+    }
+  },
+  {
+    "stage": "小组赛",
+    "group_name": "H组",
+    "home_team": "佛得角",
+    "away_team": "沙特阿拉伯",
+    "home_flag": "🇨🇻",
+    "away_flag": "🇸🇦",
+    "kickoff": "2026-06-26T22:00:00+00:00",
+    "venue": "堪萨斯城体育场",
+    "status": "finished",
+    "home_score": 2,
+    "away_score": 1,
+    "home_penalties": null,
+    "away_penalties": null,
+    "minute": 90,
+    "stats": {
+      "possession": [
+        49,
+        51
+      ],
+      "shots": [
+        12,
+        17
+      ],
+      "corners": [
+        6,
+        2
+      ],
+      "data_source": "platform_seed"
+    }
+  },
+  {
+    "stage": "小组赛",
+    "group_name": "H组",
+    "home_team": "乌拉圭",
+    "away_team": "沙特阿拉伯",
+    "home_flag": "🇺🇾",
+    "away_flag": "🇸🇦",
+    "kickoff": "2026-06-27T19:00:00+00:00",
+    "venue": "温哥华体育场",
+    "status": "finished",
+    "home_score": 1,
+    "away_score": 1,
+    "home_penalties": null,
+    "away_penalties": null,
+    "minute": 90,
+    "stats": {
+      "possession": [
+        52,
+        48
+      ],
+      "shots": [
+        16,
+        14
+      ],
+      "corners": [
+        2,
+        6
+      ],
+      "data_source": "platform_seed"
+    }
+  },
+  {
+    "stage": "小组赛",
+    "group_name": "H组",
+    "home_team": "佛得角",
+    "away_team": "西班牙",
+    "home_flag": "🇨🇻",
+    "away_flag": "🇪🇸",
+    "kickoff": "2026-06-27T22:00:00+00:00",
+    "venue": "墨西哥城体育场",
+    "status": "finished",
+    "home_score": 3,
+    "away_score": 2,
+    "home_penalties": null,
+    "away_penalties": null,
+    "minute": 90,
+    "stats": {
+      "possession": [
+        52,
+        48
+      ],
+      "shots": [
+        15,
+        17
+      ],
+      "corners": [
+        7,
+        5
+      ],
+      "data_source": "platform_seed"
+    }
+  },
+  {
+    "stage": "小组赛",
+    "group_name": "I组",
+    "home_team": "挪威",
+    "away_team": "塞内加尔",
+    "home_flag": "🇳🇴",
+    "away_flag": "🇸🇳",
+    "kickoff": "2026-06-27T20:00:00+00:00",
+    "venue": "波士顿体育场",
+    "status": "finished",
+    "home_score": 3,
+    "away_score": 0,
+    "home_penalties": null,
+    "away_penalties": null,
+    "minute": 90,
+    "stats": {
+      "possession": [
+        44,
+        56
+      ],
+      "shots": [
+        11,
+        6
+      ],
+      "corners": [
+        6,
+        8
+      ],
+      "data_source": "platform_seed"
+    }
+  },
+  {
+    "stage": "小组赛",
+    "group_name": "I组",
+    "home_team": "法国",
+    "away_team": "伊拉克",
+    "home_flag": "🇫🇷",
+    "away_flag": "🇮🇶",
+    "kickoff": "2026-06-27T23:00:00+00:00",
+    "venue": "迈阿密体育场",
+    "status": "finished",
+    "home_score": 2,
+    "away_score": 1,
+    "home_penalties": null,
+    "away_penalties": null,
+    "minute": 90,
+    "stats": {
+      "possession": [
+        48,
+        52
+      ],
+      "shots": [
+        8,
+        15
+      ],
+      "corners": [
+        3,
+        6
+      ],
+      "data_source": "platform_seed"
+    }
+  },
+  {
+    "stage": "小组赛",
+    "group_name": "I组",
+    "home_team": "挪威",
+    "away_team": "法国",
+    "home_flag": "🇳🇴",
+    "away_flag": "🇫🇷",
+    "kickoff": "2026-06-28T20:00:00+00:00",
+    "venue": "堪萨斯城体育场",
+    "status": "finished",
+    "home_score": 1,
+    "away_score": 0,
+    "home_penalties": null,
+    "away_penalties": null,
+    "minute": 90,
+    "stats": {
+      "possession": [
+        47,
+        53
+      ],
+      "shots": [
+        8,
+        14
+      ],
+      "corners": [
+        3,
+        4
+      ],
+      "data_source": "platform_seed"
+    }
+  },
+  {
+    "stage": "小组赛",
+    "group_name": "I组",
+    "home_team": "塞内加尔",
+    "away_team": "伊拉克",
+    "home_flag": "🇸🇳",
+    "away_flag": "🇮🇶",
+    "kickoff": "2026-06-28T23:00:00+00:00",
+    "venue": "温哥华体育场",
+    "status": "finished",
+    "home_score": 3,
+    "away_score": 1,
+    "home_penalties": null,
+    "away_penalties": null,
+    "minute": 90,
+    "stats": {
+      "possession": [
+        42,
+        58
+      ],
+      "shots": [
+        18,
+        7
+      ],
+      "corners": [
+        7,
+        4
+      ],
+      "data_source": "platform_seed"
+    }
+  },
+  {
+    "stage": "小组赛",
+    "group_name": "I组",
+    "home_team": "挪威",
+    "away_team": "伊拉克",
+    "home_flag": "🇳🇴",
+    "away_flag": "🇮🇶",
+    "kickoff": "2026-06-11T20:00:00+00:00",
+    "venue": "墨西哥城体育场",
+    "status": "finished",
+    "home_score": 2,
+    "away_score": 0,
+    "home_penalties": null,
+    "away_penalties": null,
+    "minute": 90,
+    "stats": {
+      "possession": [
+        50,
+        50
+      ],
+      "shots": [
+        7,
+        15
+      ],
+      "corners": [
+        8,
+        3
+      ],
+      "data_source": "platform_seed"
+    }
+  },
+  {
+    "stage": "小组赛",
+    "group_name": "I组",
+    "home_team": "塞内加尔",
+    "away_team": "法国",
+    "home_flag": "🇸🇳",
+    "away_flag": "🇫🇷",
+    "kickoff": "2026-06-11T23:00:00+00:00",
+    "venue": "多伦多体育场",
+    "status": "finished",
+    "home_score": 1,
+    "away_score": 0,
+    "home_penalties": null,
+    "away_penalties": null,
+    "minute": 90,
+    "stats": {
+      "possession": [
+        49,
+        51
+      ],
+      "shots": [
+        10,
+        12
+      ],
+      "corners": [
+        7,
+        3
+      ],
+      "data_source": "platform_seed"
+    }
+  },
+  {
+    "stage": "小组赛",
+    "group_name": "J组",
+    "home_team": "阿根廷",
+    "away_team": "奥地利",
+    "home_flag": "🇦🇷",
+    "away_flag": "🇦🇹",
+    "kickoff": "2026-06-11T18:00:00+00:00",
+    "venue": "迈阿密体育场",
+    "status": "finished",
+    "home_score": 1,
+    "away_score": 1,
+    "home_penalties": null,
+    "away_penalties": null,
+    "minute": 90,
+    "stats": {
+      "possession": [
+        56,
+        44
+      ],
+      "shots": [
+        17,
+        10
+      ],
+      "corners": [
+        2,
+        6
+      ],
+      "data_source": "platform_seed"
+    }
+  },
+  {
+    "stage": "小组赛",
+    "group_name": "J组",
+    "home_team": "约旦",
+    "away_team": "阿尔及利亚",
+    "home_flag": "🇯🇴",
+    "away_flag": "🇩🇿",
+    "kickoff": "2026-06-11T21:00:00+00:00",
+    "venue": "堪萨斯城体育场",
+    "status": "finished",
+    "home_score": 2,
+    "away_score": 0,
+    "home_penalties": null,
+    "away_penalties": null,
+    "minute": 90,
+    "stats": {
+      "possession": [
+        47,
+        53
+      ],
+      "shots": [
+        15,
+        14
+      ],
+      "corners": [
+        5,
+        6
+      ],
+      "data_source": "platform_seed"
+    }
+  },
+  {
+    "stage": "小组赛",
+    "group_name": "J组",
+    "home_team": "阿根廷",
+    "away_team": "约旦",
+    "home_flag": "🇦🇷",
+    "away_flag": "🇯🇴",
+    "kickoff": "2026-06-12T18:00:00+00:00",
+    "venue": "温哥华体育场",
+    "status": "finished",
+    "home_score": 2,
+    "away_score": 1,
+    "home_penalties": null,
+    "away_penalties": null,
+    "minute": 90,
+    "stats": {
+      "possession": [
+        52,
+        48
+      ],
+      "shots": [
+        16,
+        12
+      ],
+      "corners": [
+        2,
+        2
+      ],
+      "data_source": "platform_seed"
+    }
+  },
+  {
+    "stage": "小组赛",
+    "group_name": "J组",
+    "home_team": "奥地利",
+    "away_team": "阿尔及利亚",
+    "home_flag": "🇦🇹",
+    "away_flag": "🇩🇿",
+    "kickoff": "2026-06-12T21:00:00+00:00",
+    "venue": "墨西哥城体育场",
+    "status": "finished",
+    "home_score": 2,
+    "away_score": 0,
+    "home_penalties": null,
+    "away_penalties": null,
+    "minute": 90,
+    "stats": {
+      "possession": [
+        50,
+        50
+      ],
+      "shots": [
+        12,
+        6
+      ],
+      "corners": [
+        8,
+        5
+      ],
+      "data_source": "platform_seed"
+    }
+  },
+  {
+    "stage": "小组赛",
+    "group_name": "J组",
+    "home_team": "阿根廷",
+    "away_team": "阿尔及利亚",
+    "home_flag": "🇦🇷",
+    "away_flag": "🇩🇿",
+    "kickoff": "2026-06-13T18:00:00+00:00",
+    "venue": "多伦多体育场",
+    "status": "finished",
+    "home_score": 1,
+    "away_score": 0,
+    "home_penalties": null,
+    "away_penalties": null,
+    "minute": 90,
+    "stats": {
+      "possession": [
+        44,
+        56
+      ],
+      "shots": [
+        13,
+        6
+      ],
+      "corners": [
+        4,
+        7
+      ],
+      "data_source": "platform_seed"
+    }
+  },
+  {
+    "stage": "小组赛",
+    "group_name": "J组",
+    "home_team": "奥地利",
+    "away_team": "约旦",
+    "home_flag": "🇦🇹",
+    "away_flag": "🇯🇴",
+    "kickoff": "2026-06-13T21:00:00+00:00",
+    "venue": "洛杉矶体育场",
+    "status": "finished",
+    "home_score": 1,
+    "away_score": 1,
+    "home_penalties": null,
+    "away_penalties": null,
+    "minute": 90,
+    "stats": {
+      "possession": [
+        42,
+        58
+      ],
+      "shots": [
+        14,
+        15
+      ],
+      "corners": [
+        8,
+        7
+      ],
+      "data_source": "platform_seed"
+    }
+  },
+  {
+    "stage": "小组赛",
+    "group_name": "K组",
+    "home_team": "葡萄牙",
+    "away_team": "乌兹别克斯坦",
+    "home_flag": "🇵🇹",
+    "away_flag": "🇺🇿",
+    "kickoff": "2026-06-13T19:00:00+00:00",
+    "venue": "堪萨斯城体育场",
+    "status": "finished",
+    "home_score": 1,
+    "away_score": 2,
+    "home_penalties": null,
+    "away_penalties": null,
+    "minute": 90,
+    "stats": {
+      "possession": [
+        47,
+        53
+      ],
+      "shots": [
+        10,
+        12
+      ],
+      "corners": [
+        3,
+        6
+      ],
+      "data_source": "platform_seed"
+    }
+  },
+  {
+    "stage": "小组赛",
+    "group_name": "K组",
+    "home_team": "哥伦比亚",
+    "away_team": "刚果民主共和国",
+    "home_flag": "🇨🇴",
+    "away_flag": "🇨🇩",
+    "kickoff": "2026-06-13T22:00:00+00:00",
+    "venue": "温哥华体育场",
+    "status": "finished",
+    "home_score": 3,
+    "away_score": 1,
+    "home_penalties": null,
+    "away_penalties": null,
+    "minute": 90,
+    "stats": {
+      "possession": [
+        48,
+        52
+      ],
+      "shots": [
+        18,
+        14
+      ],
+      "corners": [
+        4,
+        8
+      ],
+      "data_source": "platform_seed"
+    }
+  },
+  {
+    "stage": "小组赛",
+    "group_name": "K组",
+    "home_team": "葡萄牙",
+    "away_team": "哥伦比亚",
+    "home_flag": "🇵🇹",
+    "away_flag": "🇨🇴",
+    "kickoff": "2026-06-14T19:00:00+00:00",
+    "venue": "墨西哥城体育场",
+    "status": "finished",
+    "home_score": 1,
+    "away_score": 2,
+    "home_penalties": null,
+    "away_penalties": null,
+    "minute": 90,
+    "stats": {
+      "possession": [
+        45,
+        55
+      ],
+      "shots": [
+        10,
+        8
+      ],
+      "corners": [
+        6,
+        5
+      ],
+      "data_source": "platform_seed"
+    }
+  },
+  {
+    "stage": "小组赛",
+    "group_name": "K组",
+    "home_team": "乌兹别克斯坦",
+    "away_team": "刚果民主共和国",
+    "home_flag": "🇺🇿",
+    "away_flag": "🇨🇩",
+    "kickoff": "2026-06-14T22:00:00+00:00",
+    "venue": "多伦多体育场",
+    "status": "finished",
+    "home_score": 1,
+    "away_score": 0,
+    "home_penalties": null,
+    "away_penalties": null,
+    "minute": 90,
+    "stats": {
+      "possession": [
+        49,
+        51
+      ],
+      "shots": [
+        9,
+        13
+      ],
+      "corners": [
+        3,
+        7
+      ],
+      "data_source": "platform_seed"
+    }
+  },
+  {
+    "stage": "小组赛",
+    "group_name": "K组",
+    "home_team": "葡萄牙",
+    "away_team": "刚果民主共和国",
+    "home_flag": "🇵🇹",
+    "away_flag": "🇨🇩",
+    "kickoff": "2026-06-15T19:00:00+00:00",
+    "venue": "洛杉矶体育场",
+    "status": "finished",
+    "home_score": 1,
+    "away_score": 1,
+    "home_penalties": null,
+    "away_penalties": null,
+    "minute": 90,
+    "stats": {
+      "possession": [
+        57,
+        43
+      ],
+      "shots": [
+        7,
+        14
+      ],
+      "corners": [
+        4,
+        4
+      ],
+      "data_source": "platform_seed"
+    }
+  },
+  {
+    "stage": "小组赛",
+    "group_name": "K组",
+    "home_team": "乌兹别克斯坦",
+    "away_team": "哥伦比亚",
+    "home_flag": "🇺🇿",
+    "away_flag": "🇨🇴",
+    "kickoff": "2026-06-15T22:00:00+00:00",
+    "venue": "纽约新泽西体育场",
+    "status": "finished",
+    "home_score": 2,
+    "away_score": 0,
+    "home_penalties": null,
+    "away_penalties": null,
+    "minute": 90,
+    "stats": {
+      "possession": [
+        47,
+        53
+      ],
+      "shots": [
+        8,
+        9
+      ],
+      "corners": [
+        4,
+        5
+      ],
+      "data_source": "platform_seed"
+    }
+  },
+  {
+    "stage": "小组赛",
+    "group_name": "L组",
+    "home_team": "英格兰",
+    "away_team": "克罗地亚",
+    "home_flag": "🏴",
+    "away_flag": "🇭🇷",
+    "kickoff": "2026-06-15T20:00:00+00:00",
+    "venue": "温哥华体育场",
+    "status": "finished",
+    "home_score": 3,
+    "away_score": 0,
+    "home_penalties": null,
+    "away_penalties": null,
+    "minute": 90,
+    "stats": {
+      "possession": [
+        45,
+        55
+      ],
+      "shots": [
+        18,
+        16
+      ],
+      "corners": [
+        4,
+        5
+      ],
+      "data_source": "platform_seed"
+    }
+  },
+  {
+    "stage": "小组赛",
+    "group_name": "L组",
+    "home_team": "加纳",
+    "away_team": "巴拿马",
+    "home_flag": "🇬🇭",
+    "away_flag": "🇵🇦",
+    "kickoff": "2026-06-15T23:00:00+00:00",
+    "venue": "墨西哥城体育场",
+    "status": "finished",
+    "home_score": 2,
+    "away_score": 0,
+    "home_penalties": null,
+    "away_penalties": null,
+    "minute": 90,
+    "stats": {
+      "possession": [
+        47,
+        53
+      ],
+      "shots": [
+        16,
+        11
+      ],
+      "corners": [
+        2,
+        3
+      ],
+      "data_source": "platform_seed"
+    }
+  },
+  {
+    "stage": "小组赛",
+    "group_name": "L组",
+    "home_team": "英格兰",
+    "away_team": "加纳",
+    "home_flag": "🏴",
+    "away_flag": "🇬🇭",
+    "kickoff": "2026-06-16T20:00:00+00:00",
+    "venue": "多伦多体育场",
+    "status": "finished",
+    "home_score": 2,
+    "away_score": 1,
+    "home_penalties": null,
+    "away_penalties": null,
+    "minute": 90,
+    "stats": {
+      "possession": [
+        45,
+        55
+      ],
+      "shots": [
+        17,
+        12
+      ],
+      "corners": [
+        3,
+        4
+      ],
+      "data_source": "platform_seed"
+    }
+  },
+  {
+    "stage": "小组赛",
+    "group_name": "L组",
+    "home_team": "克罗地亚",
+    "away_team": "巴拿马",
+    "home_flag": "🇭🇷",
+    "away_flag": "🇵🇦",
+    "kickoff": "2026-06-16T23:00:00+00:00",
+    "venue": "洛杉矶体育场",
+    "status": "finished",
+    "home_score": 1,
+    "away_score": 1,
+    "home_penalties": null,
+    "away_penalties": null,
+    "minute": 90,
+    "stats": {
+      "possession": [
+        51,
+        49
+      ],
+      "shots": [
+        18,
+        17
+      ],
+      "corners": [
+        8,
+        3
+      ],
+      "data_source": "platform_seed"
+    }
+  },
+  {
+    "stage": "小组赛",
+    "group_name": "L组",
+    "home_team": "英格兰",
+    "away_team": "巴拿马",
+    "home_flag": "🏴",
+    "away_flag": "🇵🇦",
+    "kickoff": "2026-06-17T20:00:00+00:00",
+    "venue": "纽约新泽西体育场",
+    "status": "finished",
+    "home_score": 2,
+    "away_score": 0,
+    "home_penalties": null,
+    "away_penalties": null,
+    "minute": 90,
+    "stats": {
+      "possession": [
+        47,
+        53
+      ],
+      "shots": [
+        12,
+        6
+      ],
+      "corners": [
+        4,
+        4
+      ],
+      "data_source": "platform_seed"
+    }
+  },
+  {
+    "stage": "小组赛",
+    "group_name": "L组",
+    "home_team": "克罗地亚",
+    "away_team": "加纳",
+    "home_flag": "🇭🇷",
+    "away_flag": "🇬🇭",
+    "kickoff": "2026-06-17T23:00:00+00:00",
+    "venue": "达拉斯体育场",
+    "status": "finished",
+    "home_score": 1,
+    "away_score": 0,
+    "home_penalties": null,
+    "away_penalties": null,
+    "minute": 90,
+    "stats": {
+      "possession": [
+        53,
+        47
+      ],
+      "shots": [
+        11,
+        15
+      ],
+      "corners": [
+        6,
+        8
+      ],
+      "data_source": "platform_seed"
+    }
+  },
+  {
+    "stage": "三十二强",
+    "group_name": "",
+    "home_team": "墨西哥",
+    "away_team": "瑞士",
+    "home_flag": "🇲🇽",
+    "away_flag": "🇨🇭",
+    "kickoff": "2026-06-29T16:00:00+00:00",
+    "venue": "纽约新泽西体育场",
+    "status": "finished",
+    "home_score": 1,
+    "away_score": 1,
+    "home_penalties": 4,
+    "away_penalties": 3,
+    "minute": 90,
+    "stats": {
+      "data_source": "platform_seed",
+      "bracket_seeded": true,
+      "symbolic_team": false
+    }
+  },
+  {
+    "stage": "三十二强",
+    "group_name": "",
+    "home_team": "巴西",
+    "away_team": "日本",
+    "home_flag": "🇧🇷",
+    "away_flag": "🇯🇵",
+    "kickoff": "2026-06-29T20:00:00+00:00",
+    "venue": "达拉斯体育场",
+    "status": "finished",
+    "home_score": 2,
+    "away_score": 1,
+    "home_penalties": null,
+    "away_penalties": null,
+    "minute": 90,
+    "stats": {
+      "data_source": "platform_seed",
+      "bracket_seeded": true,
+      "symbolic_team": false
+    }
+  },
+  {
+    "stage": "三十二强",
+    "group_name": "",
+    "home_team": "德国",
+    "away_team": "韩国",
+    "home_flag": "🇩🇪",
+    "away_flag": "🇰🇷",
+    "kickoff": "2026-06-30T00:00:00+00:00",
+    "venue": "休斯敦体育场",
+    "status": "finished",
+    "home_score": 2,
+    "away_score": 1,
+    "home_penalties": null,
+    "away_penalties": null,
+    "minute": 90,
+    "stats": {
+      "data_source": "platform_seed",
+      "bracket_seeded": true,
+      "symbolic_team": false
+    }
+  },
+  {
+    "stage": "三十二强",
+    "group_name": "",
+    "home_team": "荷兰",
+    "away_team": "摩洛哥",
+    "home_flag": "🇳🇱",
+    "away_flag": "🇲🇦",
+    "kickoff": "2026-06-30T04:00:00+00:00",
+    "venue": "亚特兰大体育场",
+    "status": "finished",
+    "home_score": 1,
+    "away_score": 2,
+    "home_penalties": null,
+    "away_penalties": null,
+    "minute": 90,
+    "stats": {
+      "data_source": "platform_seed",
+      "bracket_seeded": true,
+      "symbolic_team": false
+    }
+  },
+  {
+    "stage": "三十二强",
+    "group_name": "",
+    "home_team": "比利时",
+    "away_team": "沙特阿拉伯",
+    "home_flag": "🇧🇪",
+    "away_flag": "🇸🇦",
+    "kickoff": "2026-06-30T08:00:00+00:00",
+    "venue": "西雅图体育场",
+    "status": "finished",
+    "home_score": 2,
+    "away_score": 1,
+    "home_penalties": null,
+    "away_penalties": null,
+    "minute": 90,
+    "stats": {
+      "data_source": "platform_seed",
+      "bracket_seeded": true,
+      "symbolic_team": false
+    }
+  },
+  {
+    "stage": "三十二强",
+    "group_name": "",
+    "home_team": "西班牙",
+    "away_team": "塞内加尔",
+    "home_flag": "🇪🇸",
+    "away_flag": "🇸🇳",
+    "kickoff": "2026-06-30T12:00:00+00:00",
+    "venue": "波士顿体育场",
+    "status": "finished",
+    "home_score": 1,
+    "away_score": 1,
+    "home_penalties": 4,
+    "away_penalties": 3,
+    "minute": 90,
+    "stats": {
+      "data_source": "platform_seed",
+      "bracket_seeded": true,
+      "symbolic_team": false
+    }
+  },
+  {
+    "stage": "三十二强",
+    "group_name": "",
+    "home_team": "法国",
+    "away_team": "瑞典",
+    "home_flag": "🇫🇷",
+    "away_flag": "🇸🇪",
+    "kickoff": "2026-06-30T16:00:00+00:00",
+    "venue": "迈阿密体育场",
+    "status": "finished",
+    "home_score": 2,
+    "away_score": 1,
+    "home_penalties": null,
+    "away_penalties": null,
+    "minute": 90,
+    "stats": {
+      "data_source": "platform_seed",
+      "bracket_seeded": true,
+      "symbolic_team": false
+    }
+  },
+  {
+    "stage": "三十二强",
+    "group_name": "",
+    "home_team": "英格兰",
+    "away_team": "哥伦比亚",
+    "home_flag": "🏴",
+    "away_flag": "🇨🇴",
+    "kickoff": "2026-06-30T20:00:00+00:00",
+    "venue": "堪萨斯城体育场",
+    "status": "finished",
+    "home_score": 2,
+    "away_score": 1,
+    "home_penalties": null,
+    "away_penalties": null,
+    "minute": 90,
+    "stats": {
+      "data_source": "platform_seed",
+      "bracket_seeded": true,
+      "symbolic_team": false
+    }
+  },
+  {
+    "stage": "三十二强",
+    "group_name": "",
+    "home_team": "阿根廷",
+    "away_team": "佛得角",
+    "home_flag": "🇦🇷",
+    "away_flag": "🇨🇻",
+    "kickoff": "2026-07-01T00:00:00+00:00",
+    "venue": "温哥华体育场",
+    "status": "finished",
+    "home_score": 2,
+    "away_score": 1,
+    "home_penalties": null,
+    "away_penalties": null,
+    "minute": 90,
+    "stats": {
+      "data_source": "platform_seed",
+      "bracket_seeded": true,
+      "symbolic_team": false
+    }
+  },
+  {
+    "stage": "三十二强",
+    "group_name": "",
+    "home_team": "葡萄牙",
+    "away_team": "克罗地亚",
+    "home_flag": "🇵🇹",
+    "away_flag": "🇭🇷",
+    "kickoff": "2026-07-01T04:00:00+00:00",
+    "venue": "墨西哥城体育场",
+    "status": "finished",
+    "home_score": 2,
+    "away_score": 1,
+    "home_penalties": null,
+    "away_penalties": null,
+    "minute": 90,
+    "stats": {
+      "data_source": "platform_seed",
+      "bracket_seeded": true,
+      "symbolic_team": false
+    }
+  },
+  {
+    "stage": "三十二强",
+    "group_name": "",
+    "home_team": "美国",
+    "away_team": "波黑",
+    "home_flag": "🇺🇸",
+    "away_flag": "🇧🇦",
+    "kickoff": "2026-07-01T08:00:00+00:00",
+    "venue": "多伦多体育场",
+    "status": "finished",
+    "home_score": 1,
+    "away_score": 1,
+    "home_penalties": 4,
+    "away_penalties": 3,
+    "minute": 90,
+    "stats": {
+      "data_source": "platform_seed",
+      "bracket_seeded": true,
+      "symbolic_team": false
+    }
+  },
+  {
+    "stage": "三十二强",
+    "group_name": "",
+    "home_team": "挪威",
+    "away_team": "奥地利",
+    "home_flag": "🇳🇴",
+    "away_flag": "🇦🇹",
+    "kickoff": "2026-07-01T12:00:00+00:00",
+    "venue": "洛杉矶体育场",
+    "status": "finished",
+    "home_score": 2,
+    "away_score": 1,
+    "home_penalties": null,
+    "away_penalties": null,
+    "minute": 90,
+    "stats": {
+      "data_source": "platform_seed",
+      "bracket_seeded": true,
+      "symbolic_team": false
+    }
+  },
+  {
+    "stage": "三十二强",
+    "group_name": "",
+    "home_team": "乌拉圭",
+    "away_team": "埃及",
+    "home_flag": "🇺🇾",
+    "away_flag": "🇪🇬",
+    "kickoff": "2026-07-01T16:00:00+00:00",
+    "venue": "纽约新泽西体育场",
+    "status": "finished",
+    "home_score": 2,
+    "away_score": 1,
+    "home_penalties": null,
+    "away_penalties": null,
+    "minute": 90,
+    "stats": {
+      "data_source": "platform_seed",
+      "bracket_seeded": true,
+      "symbolic_team": false
+    }
+  },
+  {
+    "stage": "三十二强",
+    "group_name": "",
+    "home_team": "土耳其",
+    "away_team": "加拿大",
+    "home_flag": "🇹🇷",
+    "away_flag": "🇨🇦",
+    "kickoff": "2026-07-01T20:00:00+00:00",
+    "venue": "达拉斯体育场",
+    "status": "finished",
+    "home_score": 2,
+    "away_score": 1,
+    "home_penalties": null,
+    "away_penalties": null,
+    "minute": 90,
+    "stats": {
+      "data_source": "platform_seed",
+      "bracket_seeded": true,
+      "symbolic_team": false
+    }
+  },
+  {
+    "stage": "三十二强",
+    "group_name": "",
+    "home_team": "阿尔及利亚",
+    "away_team": "捷克",
+    "home_flag": "🇩🇿",
+    "away_flag": "🇨🇿",
+    "kickoff": "2026-07-02T00:00:00+00:00",
+    "venue": "休斯敦体育场",
+    "status": "finished",
+    "home_score": 2,
+    "away_score": 1,
+    "home_penalties": null,
+    "away_penalties": null,
+    "minute": 90,
+    "stats": {
+      "data_source": "platform_seed",
+      "bracket_seeded": true,
+      "symbolic_team": false
+    }
+  },
+  {
+    "stage": "三十二强",
+    "group_name": "",
+    "home_team": "厄瓜多尔",
+    "away_team": "加纳",
+    "home_flag": "🇪🇨",
+    "away_flag": "🇬🇭",
+    "kickoff": "2026-07-02T04:00:00+00:00",
+    "venue": "亚特兰大体育场",
+    "status": "finished",
+    "home_score": 1,
+    "away_score": 1,
+    "home_penalties": 4,
+    "away_penalties": 3,
+    "minute": 90,
+    "stats": {
+      "data_source": "platform_seed",
+      "bracket_seeded": true,
+      "symbolic_team": false
+    }
+  },
+  {
+    "stage": "十六强",
+    "group_name": "",
+    "home_team": "墨西哥",
+    "away_team": "巴西",
+    "home_flag": "🇲🇽",
+    "away_flag": "🇧🇷",
+    "kickoff": "2026-07-04T16:00:00+00:00",
+    "venue": "纽约新泽西体育场",
+    "status": "finished",
+    "home_score": 1,
+    "away_score": 1,
+    "home_penalties": 3,
+    "away_penalties": 4,
+    "minute": 90,
+    "stats": {
+      "data_source": "platform_seed",
+      "bracket_seeded": true,
+      "symbolic_team": false
+    }
+  },
+  {
+    "stage": "十六强",
+    "group_name": "",
+    "home_team": "德国",
+    "away_team": "摩洛哥",
+    "home_flag": "🇩🇪",
+    "away_flag": "🇲🇦",
+    "kickoff": "2026-07-04T20:00:00+00:00",
+    "venue": "达拉斯体育场",
+    "status": "finished",
+    "home_score": 1,
+    "away_score": 2,
+    "home_penalties": null,
+    "away_penalties": null,
+    "minute": 90,
+    "stats": {
+      "data_source": "platform_seed",
+      "bracket_seeded": true,
+      "symbolic_team": false
+    }
+  },
+  {
+    "stage": "十六强",
+    "group_name": "",
+    "home_team": "比利时",
+    "away_team": "西班牙",
+    "home_flag": "🇧🇪",
+    "away_flag": "🇪🇸",
+    "kickoff": "2026-07-05T00:00:00+00:00",
+    "venue": "休斯敦体育场",
+    "status": "finished",
+    "home_score": 1,
+    "away_score": 2,
+    "home_penalties": null,
+    "away_penalties": null,
+    "minute": 90,
+    "stats": {
+      "data_source": "platform_seed",
+      "bracket_seeded": true,
+      "symbolic_team": false
+    }
+  },
+  {
+    "stage": "十六强",
+    "group_name": "",
+    "home_team": "法国",
+    "away_team": "英格兰",
+    "home_flag": "🇫🇷",
+    "away_flag": "🏴",
+    "kickoff": "2026-07-05T04:00:00+00:00",
+    "venue": "亚特兰大体育场",
+    "status": "finished",
+    "home_score": 2,
+    "away_score": 1,
+    "home_penalties": null,
+    "away_penalties": null,
+    "minute": 90,
+    "stats": {
+      "data_source": "platform_seed",
+      "bracket_seeded": true,
+      "symbolic_team": false
+    }
+  },
+  {
+    "stage": "十六强",
+    "group_name": "",
+    "home_team": "阿根廷",
+    "away_team": "葡萄牙",
+    "home_flag": "🇦🇷",
+    "away_flag": "🇵🇹",
+    "kickoff": "2026-07-05T08:00:00+00:00",
+    "venue": "西雅图体育场",
+    "status": "finished",
+    "home_score": 2,
+    "away_score": 1,
+    "home_penalties": null,
+    "away_penalties": null,
+    "minute": 90,
+    "stats": {
+      "data_source": "platform_seed",
+      "bracket_seeded": true,
+      "symbolic_team": false
+    }
+  },
+  {
+    "stage": "十六强",
+    "group_name": "",
+    "home_team": "美国",
+    "away_team": "挪威",
+    "home_flag": "🇺🇸",
+    "away_flag": "🇳🇴",
+    "kickoff": "2026-07-05T12:00:00+00:00",
+    "venue": "波士顿体育场",
+    "status": "finished",
+    "home_score": 1,
+    "away_score": 1,
+    "home_penalties": 3,
+    "away_penalties": 4,
+    "minute": 90,
+    "stats": {
+      "data_source": "platform_seed",
+      "bracket_seeded": true,
+      "symbolic_team": false
+    }
+  },
+  {
+    "stage": "十六强",
+    "group_name": "",
+    "home_team": "乌拉圭",
+    "away_team": "土耳其",
+    "home_flag": "🇺🇾",
+    "away_flag": "🇹🇷",
+    "kickoff": "2026-07-05T16:00:00+00:00",
+    "venue": "迈阿密体育场",
+    "status": "finished",
+    "home_score": 2,
+    "away_score": 1,
+    "home_penalties": null,
+    "away_penalties": null,
+    "minute": 90,
+    "stats": {
+      "data_source": "platform_seed",
+      "bracket_seeded": true,
+      "symbolic_team": false
+    }
+  },
+  {
+    "stage": "十六强",
+    "group_name": "",
+    "home_team": "阿尔及利亚",
+    "away_team": "厄瓜多尔",
+    "home_flag": "🇩🇿",
+    "away_flag": "🇪🇨",
+    "kickoff": "2026-07-05T20:00:00+00:00",
+    "venue": "堪萨斯城体育场",
+    "status": "finished",
+    "home_score": 1,
+    "away_score": 2,
+    "home_penalties": null,
+    "away_penalties": null,
+    "minute": 90,
+    "stats": {
+      "data_source": "platform_seed",
+      "bracket_seeded": true,
+      "symbolic_team": false
+    }
+  },
+  {
+    "stage": "四分之一决赛",
+    "group_name": "",
+    "home_team": "巴西",
+    "away_team": "摩洛哥",
+    "home_flag": "🇧🇷",
+    "away_flag": "🇲🇦",
+    "kickoff": "2026-07-09T16:00:00+00:00",
+    "venue": "纽约新泽西体育场",
+    "status": "finished",
+    "home_score": 1,
+    "away_score": 1,
+    "home_penalties": 4,
+    "away_penalties": 3,
+    "minute": 90,
+    "stats": {
+      "data_source": "platform_seed",
+      "bracket_seeded": true,
+      "symbolic_team": false
+    }
+  },
+  {
+    "stage": "四分之一决赛",
+    "group_name": "",
+    "home_team": "西班牙",
+    "away_team": "法国",
+    "home_flag": "🇪🇸",
+    "away_flag": "🇫🇷",
+    "kickoff": "2026-07-09T20:00:00+00:00",
+    "venue": "达拉斯体育场",
+    "status": "finished",
+    "home_score": 1,
+    "away_score": 2,
+    "home_penalties": null,
+    "away_penalties": null,
+    "minute": 90,
+    "stats": {
+      "data_source": "platform_seed",
+      "bracket_seeded": true,
+      "symbolic_team": false
+    }
+  },
+  {
+    "stage": "四分之一决赛",
+    "group_name": "",
+    "home_team": "阿根廷",
+    "away_team": "挪威",
+    "home_flag": "🇦🇷",
+    "away_flag": "🇳🇴",
+    "kickoff": "2026-07-10T00:00:00+00:00",
+    "venue": "休斯敦体育场",
+    "status": "finished",
+    "home_score": 2,
+    "away_score": 1,
+    "home_penalties": null,
+    "away_penalties": null,
+    "minute": 90,
+    "stats": {
+      "data_source": "platform_seed",
+      "bracket_seeded": true,
+      "symbolic_team": false
+    }
+  },
+  {
+    "stage": "四分之一决赛",
+    "group_name": "",
+    "home_team": "乌拉圭",
+    "away_team": "厄瓜多尔",
+    "home_flag": "🇺🇾",
+    "away_flag": "🇪🇨",
+    "kickoff": "2026-07-10T04:00:00+00:00",
+    "venue": "亚特兰大体育场",
+    "status": "finished",
+    "home_score": 2,
+    "away_score": 1,
+    "home_penalties": null,
+    "away_penalties": null,
+    "minute": 90,
+    "stats": {
+      "data_source": "platform_seed",
+      "bracket_seeded": true,
+      "symbolic_team": false
+    }
+  },
+  {
+    "stage": "半决赛",
+    "group_name": "",
+    "home_team": "巴西",
+    "away_team": "法国",
+    "home_flag": "🇧🇷",
+    "away_flag": "🇫🇷",
+    "kickoff": "2026-07-14T19:00:00+00:00",
+    "venue": "纽约新泽西体育场",
+    "status": "scheduled",
+    "home_score": null,
+    "away_score": null,
+    "home_penalties": null,
+    "away_penalties": null,
+    "minute": null,
+    "stats": {
+      "data_source": "platform_seed",
+      "bracket_seeded": true,
+      "symbolic_team": false
+    }
+  },
+  {
+    "stage": "半决赛",
+    "group_name": "",
+    "home_team": "阿根廷",
+    "away_team": "乌拉圭",
+    "home_flag": "🇦🇷",
+    "away_flag": "🇺🇾",
+    "kickoff": "2026-07-14T23:00:00+00:00",
+    "venue": "达拉斯体育场",
+    "status": "scheduled",
+    "home_score": null,
+    "away_score": null,
+    "home_penalties": null,
+    "away_penalties": null,
+    "minute": null,
+    "stats": {
+      "data_source": "platform_seed",
+      "bracket_seeded": true,
+      "symbolic_team": false
+    }
+  },
+  {
+    "stage": "三四名决赛",
+    "group_name": "",
+    "home_team": "半决赛负者1",
+    "away_team": "半决赛负者2",
+    "home_flag": "🏳️",
+    "away_flag": "🏳️",
+    "kickoff": "2026-07-18T20:00:00+00:00",
+    "venue": "纽约新泽西体育场",
+    "status": "scheduled",
+    "home_score": null,
+    "away_score": null,
+    "home_penalties": null,
+    "away_penalties": null,
+    "minute": null,
+    "stats": {
+      "data_source": "platform_seed",
+      "bracket_seeded": true,
+      "symbolic_team": true
+    }
+  },
+  {
+    "stage": "决赛",
+    "group_name": "",
+    "home_team": "半决赛胜者1",
+    "away_team": "半决赛胜者2",
+    "home_flag": "🏳️",
+    "away_flag": "🏳️",
+    "kickoff": "2026-07-19T19:00:00+00:00",
+    "venue": "纽约新泽西体育场",
+    "status": "scheduled",
+    "home_score": null,
+    "away_score": null,
+    "home_penalties": null,
+    "away_penalties": null,
+    "minute": null,
+    "stats": {
+      "data_source": "platform_seed",
+      "bracket_seeded": true,
+      "symbolic_team": true
+    }
+  }
+]

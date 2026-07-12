@@ -1,0 +1,2 @@
+export function Loading({label='数据加载中'}:{label?:string}){return <div className="grid min-h-[240px] place-items-center"><div className="text-center"><div className="mx-auto mb-4 h-10 w-10 animate-spin rounded-full border-2 border-white/10 border-t-neon"/><p className="text-sm text-slate-500">{label}</p></div></div>}
+export function ErrorBox({message='服务暂时不可用，请确认后端已启动'}:{message?:string}){return <div className="panel border-red-400/20 p-6 text-sm text-red-200">{message}</div>}

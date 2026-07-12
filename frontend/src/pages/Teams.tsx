@@ -1,0 +1,10 @@
+import { useMemo, useState } from 'react'
+import { useQuery } from '@tanstack/react-query'
+import { Search, SlidersHorizontal } from 'lucide-react'
+import TeamCard from '../components/TeamCard'
+import SectionHeader from '../components/SectionHeader'
+import EmptyState from '../components/EmptyState'
+import { ErrorBox, Loading } from '../components/Loading'
+import { getTeams } from '../lib/api'
+
+export default function Teams(){const {data=[],isLoading,isError}=useQuery({queryKey:['teams'],queryFn:getTeams});const [q,setQ]=useState('');const [conf,setConf]=useState('全部');const confs=['全部',...Array.from(new Set(data.map(x=>x.confederation)))];const filtered=useMemo(()=>data.filter(x=>(conf==='全部'||x.confederation===conf)&&(!q||`${x.name}${x.english_name}${x.style}`.toLowerCase().includes(q.toLowerCase()))),[data,q,conf]);if(isLoading)return <Loading/>;if(isError)return <ErrorBox/>;return <div className="space-y-7"><section className="rounded-[32px] border border-white/10 bg-gradient-to-br from-[#102a22] to-[#09131c] p-6 md:p-9"><div className="eyebrow">NATIONAL TEAMS</div><h1 className="mt-3 bg-gradient-to-r from-neon via-cyanai to-amber-200 bg-clip-text text-3xl font-black text-transparent md:text-5xl">球队中心</h1></section><div className="panel flex flex-col gap-3 p-4 md:flex-row"><div className="relative flex-1"><Search className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-500" size={17}/><input className="input pl-11" placeholder="搜索球队、英文名或战术风格" value={q} onChange={e=>setQ(e.target.value)}/></div><div className="flex items-center gap-2 overflow-x-auto"><SlidersHorizontal size={17} className="shrink-0 text-slate-500"/>{confs.map(x=><button key={x} onClick={()=>setConf(x)} className={`chip shrink-0 ${conf===x?'border-neon/50 bg-neon/15 text-neon':''}`}>{x}</button>)}</div></div><SectionHeader title={`${filtered.length} 支球队`}/>{filtered.length?<div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4">{filtered.map((x,i)=><TeamCard key={x.id} team={x} index={i}/>)}</div>:<EmptyState title="没有匹配球队"/>}</div>}

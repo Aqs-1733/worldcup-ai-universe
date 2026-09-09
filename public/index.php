@@ -16,6 +16,7 @@ use App\Controllers\AdminController;
 use App\Controllers\AuthController;
 use App\Controllers\PageController;
 use App\Core\Router;
+use App\Core\View;
 
 $router = new Router();
 
@@ -49,4 +50,12 @@ $router->get('/admin/{table}', [AdminController::class, 'table']);
 $router->post('/admin/{table}/save', [AdminController::class, 'save']);
 $router->post('/admin/{table}/delete', [AdminController::class, 'delete']);
 
-echo $router->dispatch($_SERVER['REQUEST_METHOD'], $_SERVER['REQUEST_URI']);
+try {
+    echo $router->dispatch($_SERVER['REQUEST_METHOD'], $_SERVER['REQUEST_URI']);
+} catch (Throwable $error) {
+    http_response_code(500);
+    echo View::render('errors/runtime', [
+        'title' => '运行环境未就绪',
+        'error' => $error,
+    ]);
+}

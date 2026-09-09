@@ -10,6 +10,15 @@ php scripts/sync_news.php
 php -S 127.0.0.1:8080 -t public public/index.php
 ```
 
+若 PHP 未加入 PATH：
+
+```powershell
+D:\XAMPP\php\php.exe scripts\install.php
+D:\XAMPP\php\php.exe scripts\sync_worldcup.php
+D:\XAMPP\php\php.exe scripts\sync_news.php
+D:\XAMPP\php\php.exe -S 127.0.0.1:8080 -t public public/index.php
+```
+
 打开 `http://127.0.0.1:8080` 后检查：
 
 - 注册和登录可用。

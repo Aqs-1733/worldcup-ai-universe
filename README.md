@@ -39,6 +39,15 @@ php scripts/sync_news.php
 php -S 127.0.0.1:8080 -t public public/index.php
 ```
 
+如果你本机 PHP 在 XAMPP 里，但没有加入 PATH，用：
+
+```powershell
+D:\XAMPP\php\php.exe scripts\install.php
+D:\XAMPP\php\php.exe scripts\sync_worldcup.php
+D:\XAMPP\php\php.exe scripts\sync_news.php
+D:\XAMPP\php\php.exe -S 127.0.0.1:8080 -t public public/index.php
+```
+
 打开：
 
 ```text

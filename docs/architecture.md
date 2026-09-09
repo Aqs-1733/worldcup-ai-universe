@@ -1,15 +1,24 @@
 # 技术架构
 
-## 总体分层
+## 技术栈
 
-浏览器端由 React、TypeScript、Vite 和 TailwindCSS 构建。ECharts 负责概率、能力雷达和统计图，D3.js 负责淘汰赛晋级图。前端通过 `/api` 与 FastAPI 通信。
+- 前端：PHP 模板、CSS、少量原生 JavaScript。
+- 后端：PHP 8.1+。
+- 数据库：MySQL 8.0+，PDO 访问。
+- 外部数据：FIFA、ESPN、Wikipedia、RSS 新闻源。
+- AI：火山方舟 ARK OpenAI 兼容接口。
 
-后端分为 API、业务服务、AI编排、数据层四部分。SQLAlchemy 同时支持 SQLite 和 PostgreSQL；默认数据库保存在 `storage/worldcup_ai.db`。
+## 目录
 
-AI足球大脑使用 LangGraph 编排七个 Agent：Football、Team、Player、News、Prediction、Vision 和 Generation。路由节点先识别用户意图，再把问题交给专门 Agent。每个 Agent 都能访问结构化数据库；知识型问题同时检索 ChromaDB RAG。
+- `public/index.php`：入口和路由。
+- `app/Core`：环境变量、数据库、路由、认证、CSRF。
+- `app/Controllers`：页面、登录注册、后台管理。
+- `app/Repositories`：MySQL 读写。
+- `app/Services`：HTTP、ARK、新闻同步、世界杯同步。
+- `views`：页面模板。
+- `database/schema.sql`：MySQL 表结构。
+- `scripts`：安装和数据同步脚本。
 
-RAG 默认使用项目内实现的稳定哈希向量，避免首次启动下载大型模型。配置 `ARK_EMBEDDING_MODEL` 后自动切换为 OpenAI兼容 Embedding 接口。
+## 数据库表
 
-视觉模块默认使用 OpenCV 完成主色聚类、国旗色带分析、绿色球场检测、球员候选点定位和阵型行聚类。按 README 安装 `ultralytics transformers torch` 并配置模型路径后，可加入 YOLO 与 CLIP；配置 ARK 后可加入视觉大模型解释。
-
-新闻模块并发访问已配置的体育来源，保存标题、摘要、原文地址和发布时间。真实性检测使用来源权重、发布时间、多源标题相似度和高风险措辞生成可信度评分。
+核心表包括：`users`、`roles`、`user_roles`、`team_members`、`data_sources`、`teams`、`players`、`coaches`、`venues`、`matches`、`match_stats`、`standings`、`news_sources`、`news_articles`、`tags`、`news_article_tags`、`comments`、`fan_preferences`、`user_favorite_teams`、`user_favorite_players`、`user_blocked_teams`、`admin_posts`、`ai_generations`、`audit_logs`。

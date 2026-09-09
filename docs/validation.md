@@ -1,14 +1,20 @@
-# 本地验证记录
+# 验收命令
 
-完成的验证项目：
+```powershell
+cd D:\worldcup-ai-universe
+php -v
+mysql --version
+php scripts/install.php
+php scripts/sync_worldcup.php
+php scripts/sync_news.php
+php -S 127.0.0.1:8080 -t public public/index.php
+```
 
-- `uv sync`：成功解析并安装后端依赖。
-- `uv run pytest -q`：7 项测试全部通过。
-- `uv run ruff check backend scripts tests`：通过。
-- `uv run python -m compileall -q backend scripts tests`：通过。
-- `uv run python backend/main.py`：成功启动。
-- `/api/health`：返回 48 支球队、69 名球员（61 名现役 + 8 名传奇）、104 场比赛、3 条初始化新闻和 1 个演示用户。
-- `/api/worldcup/standings`：返回 12 个小组、48 条积分记录。
-- 前端所有 TypeScript/TSX 文件：TypeScript 解析器语法诊断为 0。
+打开 `http://127.0.0.1:8080` 后检查：
 
-当前制作环境无法解析 `registry.npmjs.org`，因此无法在此环境下载前端依赖并执行 `pnpm build`。项目已提供完整 `package.json`、Vite、TypeScript、TailwindCSS、ESLint 配置及源码；在网络正常的 Windows 环境执行 `pnpm install` 后即可构建和启动。
+- 注册和登录可用。
+- 用户名重复会提示失败。
+- 首次问卷支持保存和跳过。
+- 首页能看到赛程、对战图、球队、球员、新闻和图表。
+- 新闻详情能看到中文归纳、原文和来源链接。
+- 后台能编辑并发布信息。

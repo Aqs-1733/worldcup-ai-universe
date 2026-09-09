@@ -1,1 +1,0 @@
-"""WorldCup AI Universe package."""

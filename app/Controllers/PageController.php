@@ -30,10 +30,11 @@ final class PageController
             'members' => $this->repo->teamMembers(),
             'teams' => array_slice($this->repo->teams(null, 12), 0, 12),
             'players' => array_slice($this->repo->players(null, null, 12), 0, 12),
-            'matches' => array_slice($this->repo->matches(24), 0, 24),
+            'matches' => $this->repo->matches(140),
             'news' => array_slice($this->repo->news([], 8), 0, 8),
             'standings' => $this->repo->standings(),
             'posts' => $this->repo->adminPosts(),
+            'qualityChecks' => $this->repo->qualityChecks(),
         ]);
     }
 

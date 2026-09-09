@@ -71,6 +71,7 @@ CREATE TABLE IF NOT EXISTS teams (
   name_original VARCHAR(160) NOT NULL,
   country_code CHAR(2) NULL,
   flag_emoji VARCHAR(16) NULL,
+  flag_url VARCHAR(800) NULL,
   confederation VARCHAR(40) NULL,
   group_name VARCHAR(20) NULL,
   coach_name VARCHAR(160) NULL,
@@ -82,6 +83,32 @@ CREATE TABLE IF NOT EXISTS teams (
   updated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   INDEX idx_teams_group (group_name),
   INDEX idx_teams_code (code)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+CREATE TABLE IF NOT EXISTS tournament_stages (
+  id BIGINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+  external_id VARCHAR(80) NULL UNIQUE,
+  name VARCHAR(120) NOT NULL,
+  name_cn VARCHAR(120) NULL,
+  stage_order INT NULL,
+  is_knockout TINYINT(1) NOT NULL DEFAULT 0,
+  source_url VARCHAR(800) NULL,
+  source_synced_at DATETIME NULL,
+  created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  updated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+CREATE TABLE IF NOT EXISTS referees (
+  id BIGINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+  external_id VARCHAR(80) NULL UNIQUE,
+  name_cn VARCHAR(160) NULL,
+  name_original VARCHAR(220) NOT NULL,
+  country_code CHAR(3) NULL,
+  avg_cards_per_game DECIMAL(5,2) NULL,
+  source_url VARCHAR(800) NULL,
+  source_synced_at DATETIME NULL,
+  created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  updated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 CREATE TABLE IF NOT EXISTS players (
@@ -182,6 +209,92 @@ CREATE TABLE IF NOT EXISTS match_stats (
   CONSTRAINT fk_match_stats_match FOREIGN KEY (match_id) REFERENCES matches(id) ON DELETE CASCADE,
   CONSTRAINT fk_match_stats_team FOREIGN KEY (team_id) REFERENCES teams(id) ON DELETE SET NULL,
   UNIQUE KEY uniq_match_stats_team (match_id, team_id)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+CREATE TABLE IF NOT EXISTS player_statistics (
+  id BIGINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+  player_id BIGINT UNSIGNED NULL,
+  external_player_id VARCHAR(80) NULL UNIQUE,
+  matches_played INT NULL,
+  matches_started INT NULL,
+  minutes_played INT NULL,
+  goals INT NULL,
+  assists INT NULL,
+  shots INT NULL,
+  shots_on_target INT NULL,
+  yellow_cards INT NULL,
+  red_cards INT NULL,
+  penalty_goals INT NULL,
+  own_goals INT NULL,
+  clean_sheets INT NULL,
+  saves INT NULL,
+  goals_conceded INT NULL,
+  average_rating DECIMAL(5,2) NULL,
+  data_source VARCHAR(160) NULL,
+  source_url VARCHAR(800) NULL,
+  source_synced_at DATETIME NULL,
+  raw_payload_json JSON NULL,
+  created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  updated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  CONSTRAINT fk_player_statistics_player FOREIGN KEY (player_id) REFERENCES players(id) ON DELETE SET NULL,
+  INDEX idx_player_statistics_player (player_id)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+CREATE TABLE IF NOT EXISTS match_lineups (
+  id BIGINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+  external_lineup_id VARCHAR(100) NULL UNIQUE,
+  match_id BIGINT UNSIGNED NULL,
+  player_id BIGINT UNSIGNED NULL,
+  team_id BIGINT UNSIGNED NULL,
+  is_starting_xi TINYINT(1) NOT NULL DEFAULT 0,
+  tactical_position VARCHAR(40) NULL,
+  minutes_played INT NULL,
+  source_url VARCHAR(800) NULL,
+  source_synced_at DATETIME NULL,
+  raw_payload_json JSON NULL,
+  created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  updated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  CONSTRAINT fk_match_lineups_match FOREIGN KEY (match_id) REFERENCES matches(id) ON DELETE CASCADE,
+  CONSTRAINT fk_match_lineups_player FOREIGN KEY (player_id) REFERENCES players(id) ON DELETE SET NULL,
+  CONSTRAINT fk_match_lineups_team FOREIGN KEY (team_id) REFERENCES teams(id) ON DELETE SET NULL,
+  INDEX idx_match_lineups_match (match_id),
+  INDEX idx_match_lineups_player (player_id)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+CREATE TABLE IF NOT EXISTS match_events (
+  id BIGINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+  external_event_id VARCHAR(100) NULL UNIQUE,
+  match_id BIGINT UNSIGNED NULL,
+  minute INT NULL,
+  event_type VARCHAR(80) NOT NULL,
+  team_id BIGINT UNSIGNED NULL,
+  player_id BIGINT UNSIGNED NULL,
+  source_url VARCHAR(800) NULL,
+  source_synced_at DATETIME NULL,
+  raw_payload_json JSON NULL,
+  created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  updated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  CONSTRAINT fk_match_events_match FOREIGN KEY (match_id) REFERENCES matches(id) ON DELETE CASCADE,
+  CONSTRAINT fk_match_events_team FOREIGN KEY (team_id) REFERENCES teams(id) ON DELETE SET NULL,
+  CONSTRAINT fk_match_events_player FOREIGN KEY (player_id) REFERENCES players(id) ON DELETE SET NULL,
+  INDEX idx_match_events_match (match_id),
+  INDEX idx_match_events_type (event_type)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+CREATE TABLE IF NOT EXISTS match_prediction_features (
+  id BIGINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+  external_match_id VARCHAR(100) NOT NULL UNIQUE,
+  match_id BIGINT UNSIGNED NULL,
+  home_team_id BIGINT UNSIGNED NULL,
+  away_team_id BIGINT UNSIGNED NULL,
+  feature_payload_json JSON NOT NULL,
+  source_url VARCHAR(800) NULL,
+  source_synced_at DATETIME NULL,
+  created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  updated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  CONSTRAINT fk_match_prediction_features_match FOREIGN KEY (match_id) REFERENCES matches(id) ON DELETE SET NULL,
+  CONSTRAINT fk_match_prediction_features_home FOREIGN KEY (home_team_id) REFERENCES teams(id) ON DELETE SET NULL,
+  CONSTRAINT fk_match_prediction_features_away FOREIGN KEY (away_team_id) REFERENCES teams(id) ON DELETE SET NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 CREATE TABLE IF NOT EXISTS standings (
@@ -342,6 +455,48 @@ CREATE TABLE IF NOT EXISTS ai_generations (
   created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
   CONSTRAINT fk_ai_generations_user FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE SET NULL,
   INDEX idx_ai_generations_user_type (user_id, generation_type)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+CREATE TABLE IF NOT EXISTS source_files (
+  id BIGINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+  dataset_key VARCHAR(120) NOT NULL,
+  source_name VARCHAR(160) NOT NULL,
+  source_path VARCHAR(900) NOT NULL UNIQUE,
+  source_url VARCHAR(900) NULL,
+  file_type VARCHAR(20) NOT NULL,
+  row_count INT NOT NULL DEFAULT 0,
+  sha256 CHAR(64) NULL,
+  imported_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  updated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  INDEX idx_source_files_dataset (dataset_key)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+CREATE TABLE IF NOT EXISTS source_records (
+  id BIGINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+  source_file_id BIGINT UNSIGNED NOT NULL,
+  row_number INT NOT NULL,
+  entity_key VARCHAR(160) NULL,
+  record_json JSON NOT NULL,
+  created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  CONSTRAINT fk_source_records_file FOREIGN KEY (source_file_id) REFERENCES source_files(id) ON DELETE CASCADE,
+  UNIQUE KEY uniq_source_record_row (source_file_id, row_number),
+  INDEX idx_source_records_entity (entity_key)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+CREATE TABLE IF NOT EXISTS data_quality_checks (
+  id BIGINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+  check_key VARCHAR(120) NOT NULL UNIQUE,
+  label VARCHAR(200) NOT NULL,
+  expected_value VARCHAR(120) NULL,
+  actual_value VARCHAR(120) NULL,
+  status ENUM('pass','warn','fail') NOT NULL DEFAULT 'warn',
+  detail TEXT NULL,
+  source_url VARCHAR(900) NULL,
+  checked_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  updated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  INDEX idx_data_quality_status (status)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 CREATE TABLE IF NOT EXISTS audit_logs (

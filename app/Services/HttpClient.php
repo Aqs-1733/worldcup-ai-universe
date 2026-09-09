@@ -52,6 +52,10 @@ final class HttpClient
             if ($proxy) {
                 curl_setopt($ch, CURLOPT_PROXY, $proxy);
             }
+            $resolve = $this->resolveOverride($url);
+            if ($resolve) {
+                curl_setopt($ch, CURLOPT_RESOLVE, [$resolve]);
+            }
             $response = curl_exec($ch);
             $status = (int) curl_getinfo($ch, CURLINFO_RESPONSE_CODE);
             $error = curl_error($ch);
@@ -90,5 +94,20 @@ final class HttpClient
 
         $scheme = strtolower((string) parse_url($url, PHP_URL_SCHEME));
         return (string) env($scheme === 'https' ? 'HTTPS_PROXY' : 'HTTP_PROXY', '') ?: null;
+    }
+
+    private function resolveOverride(string $url): ?string
+    {
+        $host = parse_url($url, PHP_URL_HOST) ?: '';
+        if ($host !== 'ark.cn-beijing.volces.com') {
+            return null;
+        }
+
+        $ip = trim((string) env('ARK_DNS_FALLBACK_IP', ''));
+        if ($ip === '') {
+            return null;
+        }
+
+        return "{$host}:443:{$ip}";
     }
 }

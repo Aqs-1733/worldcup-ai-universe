@@ -11,7 +11,7 @@
     <?php
       $fields = [
         'team_members' => ['name' => '姓名', 'student_no' => '学号', 'role_name' => '角色', 'bio' => '简介', 'photo_url' => '照片URL', 'sort_order' => '排序', 'is_visible' => '显示(1/0)'],
-        'teams' => ['code' => '代码', 'name_cn' => '中文名', 'name_original' => '原名', 'country_code' => '国家代码', 'flag_emoji' => '国旗', 'confederation' => '赛区', 'group_name' => '分组', 'coach_name' => '教练', 'world_ranking' => '排名', 'profile' => '简介', 'source_url' => '来源'],
+        'teams' => ['code' => '代码', 'name_cn' => '中文名', 'name_original' => '原名', 'country_code' => '国家代码', 'flag_emoji' => '国旗Emoji', 'flag_url' => '国旗图片URL', 'confederation' => '赛区', 'group_name' => '分组', 'coach_name' => '教练', 'world_ranking' => '排名', 'profile' => '简介', 'source_url' => '来源'],
         'players' => ['team_id' => '球队ID', 'name_cn' => '中文名', 'name_original' => '原名', 'position' => '位置', 'shirt_number' => '号码', 'birth_date' => '生日', 'age' => '年龄', 'club' => '俱乐部', 'caps' => '出场', 'goals' => '进球', 'height_cm' => '身高', 'photo_url' => '照片URL', 'popularity_score' => '知名度', 'source_url' => '来源'],
         'matches' => ['stage' => '阶段', 'group_name' => '分组', 'home_team_id' => '主队ID', 'away_team_id' => '客队ID', 'home_team_name' => '主队名', 'away_team_name' => '客队名', 'home_score' => '主队比分', 'away_score' => '客队比分', 'status' => '状态', 'starts_at' => '时间', 'source_url' => '来源'],
         'news_articles' => ['source_name' => '来源名', 'source_url' => '来源URL', 'title_cn' => '中文标题', 'title_original' => '原文标题', 'summary_cn' => '中文摘要', 'summary_original' => '原文摘要', 'content_cn' => '中文正文', 'content_original' => '原文正文', 'language_code' => '语言', 'published_at' => '发布时间', 'credibility_score' => '可信度', 'translation_status' => '翻译状态'],

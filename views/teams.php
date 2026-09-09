@@ -9,7 +9,7 @@
 <section class="card-grid reveal">
   <?php foreach ($teams as $team): ?>
     <a class="team-card" href="<?= e(url('/teams/' . $team['slug'])) ?>">
-      <div class="flag-large"><?= e($team['flag_emoji'] ?: '◇') ?></div>
+      <div class="flag-large"><?= flag_html($team['flag_url'] ?? null, $team['flag_emoji'] ?? null, $team['name_cn'] ?: $team['name_original']) ?></div>
       <h2><?= e(display_name($team['name_cn'], $team['name_original'])) ?></h2>
       <p><?= e($team['confederation'] ?: '赛区待同步') ?> · <?= e($team['group_name'] ?: '分组待同步') ?></p>
       <div class="meta-row">

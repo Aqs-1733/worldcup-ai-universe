@@ -5,13 +5,28 @@
 
 <section class="panel reveal">
   <div class="section-head"><div><span class="kicker">BRACKET</span><h2>对战图</h2></div><span class="source-chip">不预测未赛比赛</span></div>
-  <div class="world-bracket">
-    <?php foreach (array_slice($matches, 0, 32) as $match): ?>
-      <article class="bracket-match <?= e($match['status']) ?>">
-        <small><?= e($match['stage']) ?> · <?= e(date_label($match['starts_at'])) ?></small>
-        <div><span><?= e(($match['home_flag'] ?? '') . ' ' . ($match['home_name_cn'] ?: $match['home_team_name'] ?: $match['home_name_original'] ?: '待定')) ?></span><b><?= $match['home_score'] === null ? '-' : e($match['home_score']) ?></b></div>
-        <div><span><?= e(($match['away_flag'] ?? '') . ' ' . ($match['away_name_cn'] ?: $match['away_team_name'] ?: $match['away_name_original'] ?: '待定')) ?></span><b><?= $match['away_score'] === null ? '-' : e($match['away_score']) ?></b></div>
-      </article>
+  <?php
+    $stageOrder = ['32强', '16强', '四分之一决赛', '半决赛', '季军赛', '决赛'];
+    $knockoutGroups = array_fill_keys($stageOrder, []);
+    foreach ($matches as $match) {
+        if (isset($knockoutGroups[$match['stage']])) {
+            $knockoutGroups[$match['stage']][] = $match;
+        }
+    }
+  ?>
+  <div class="world-bracket bracket-rounds">
+    <?php foreach ($knockoutGroups as $stage => $stageMatches): ?>
+      <div class="bracket-round">
+        <h3><?= e($stage) ?></h3>
+        <?php foreach ($stageMatches as $match): ?>
+          <article class="bracket-match <?= e($match['status']) ?>">
+            <small><?= e(date_label($match['starts_at'])) ?></small>
+            <div><span><?= team_name_html($match['home_flag_url'] ?? null, $match['home_flag'] ?? null, $match['home_name_cn'] ?? null, $match['home_team_name'] ?: ($match['home_name_original'] ?? null)) ?></span><b><?= $match['home_score'] === null ? '-' : e($match['home_score']) ?></b></div>
+            <div><span><?= team_name_html($match['away_flag_url'] ?? null, $match['away_flag'] ?? null, $match['away_name_cn'] ?? null, $match['away_team_name'] ?: ($match['away_name_original'] ?? null)) ?></span><b><?= $match['away_score'] === null ? '-' : e($match['away_score']) ?></b></div>
+          </article>
+        <?php endforeach; ?>
+        <?php if (!$stageMatches): ?><div class="bracket-slot is-empty"></div><?php endif; ?>
+      </div>
     <?php endforeach; ?>
     <?php if (!$matches): ?><div class="data-empty wide">同步赛事后显示真实赛程和结果。</div><?php endif; ?>
   </div>
@@ -27,9 +42,9 @@
         <tr>
           <td><?= e(date_label($match['starts_at'])) ?></td>
           <td><?= e($match['stage']) ?></td>
-          <td><?= e(($match['home_flag'] ?? '') . ' ' . ($match['home_name_cn'] ?: $match['home_team_name'] ?: $match['home_name_original'] ?: '待定')) ?></td>
+          <td><?= team_name_html($match['home_flag_url'] ?? null, $match['home_flag'] ?? null, $match['home_name_cn'] ?? null, $match['home_team_name'] ?: ($match['home_name_original'] ?? null)) ?></td>
           <td><?= $match['home_score'] === null ? '未赛' : e($match['home_score'] . ' : ' . $match['away_score']) ?></td>
-          <td><?= e(($match['away_flag'] ?? '') . ' ' . ($match['away_name_cn'] ?: $match['away_team_name'] ?: $match['away_name_original'] ?: '待定')) ?></td>
+          <td><?= team_name_html($match['away_flag_url'] ?? null, $match['away_flag'] ?? null, $match['away_name_cn'] ?? null, $match['away_team_name'] ?: ($match['away_name_original'] ?? null)) ?></td>
           <td><?= e($match['status']) ?></td>
           <td><?php if ($match['source_url']): ?><a href="<?= e($match['source_url']) ?>" target="_blank" rel="noreferrer">来源</a><?php else: ?>-<?php endif; ?></td>
         </tr>
@@ -49,7 +64,7 @@
         <tbody>
         <?php foreach ($rows as $row): ?>
           <tr>
-            <td><?= e(($row['flag_emoji'] ?? '') . ' ' . ($row['name_cn'] ?: $row['name_original'])) ?></td>
+            <td><?= team_name_html($row['flag_url'] ?? null, $row['flag_emoji'] ?? null, $row['name_cn'] ?? null, $row['name_original'] ?? null) ?></td>
             <td><?= e($row['played']) ?></td><td><?= e($row['won']) ?></td><td><?= e($row['drawn']) ?></td><td><?= e($row['lost']) ?></td>
             <td><?= e($row['goals_for']) ?></td><td><?= e($row['goals_against']) ?></td><td><?= e($row['goal_difference']) ?></td><td><b><?= e($row['points']) ?></b></td>
           </tr>

@@ -97,10 +97,28 @@ function flag_name(array $row, string $prefix = ''): string
     return trim(($flag ? $flag . ' ' : '') . $name);
 }
 
+function flag_html(?string $flagUrl, ?string $flagEmoji = '', ?string $alt = ''): string
+{
+    $alt = $alt !== '' ? $alt : 'flag';
+    if ($flagUrl) {
+        return '<img class="inline-flag" src="' . e($flagUrl) . '" alt="' . e($alt) . '" loading="lazy">';
+    }
+    if ($flagEmoji) {
+        return '<span class="emoji-flag">' . e($flagEmoji) . '</span>';
+    }
+    return '<span class="emoji-flag empty-flag"></span>';
+}
+
+function team_name_html(?string $flagUrl, ?string $flagEmoji, ?string $cn, ?string $original): string
+{
+    $name = display_name($cn, $original);
+    return '<span class="team-name-inline">' . flag_html($flagUrl, $flagEmoji, $name) . '<span>' . e($name) . '</span></span>';
+}
+
 function date_label(?string $datetime): string
 {
     if (!$datetime) {
-        return '时间待确认';
+        return '';
     }
     return date('Y-m-d H:i', strtotime($datetime));
 }

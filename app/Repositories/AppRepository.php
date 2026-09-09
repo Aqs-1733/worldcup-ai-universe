@@ -19,12 +19,29 @@ final class AppRepository
     /** @return array<string, int> */
     public function counts(): array
     {
-        $tables = ['teams', 'players', 'matches', 'news_articles', 'comments', 'users', 'team_members'];
+        $tables = ['teams', 'players', 'matches', 'news_articles', 'comments', 'users', 'team_members', 'source_files', 'source_records', 'data_quality_checks'];
         $counts = [];
         foreach ($tables as $table) {
-            $counts[$table] = (int) $this->pdo->query("SELECT COUNT(*) FROM {$table}")->fetchColumn();
+            try {
+                $counts[$table] = (int) $this->pdo->query("SELECT COUNT(*) FROM {$table}")->fetchColumn();
+            } catch (\Throwable) {
+                $counts[$table] = 0;
+            }
         }
         return $counts;
+    }
+
+    /** @return array<int, array<string, mixed>> */
+    public function qualityChecks(int $limit = 8): array
+    {
+        try {
+            $stmt = $this->pdo->prepare('SELECT * FROM data_quality_checks ORDER BY status <> "fail", checked_at DESC, id LIMIT ?');
+            $stmt->bindValue(1, $limit, PDO::PARAM_INT);
+            $stmt->execute();
+            return $stmt->fetchAll();
+        } catch (\Throwable) {
+            return [];
+        }
     }
 
     /** @return array<int, array<string, mixed>> */
@@ -91,7 +108,7 @@ final class AppRepository
             $params[] = $teamId;
         }
 
-        $sql = 'SELECT p.*, t.name_cn AS team_name_cn, t.name_original AS team_name_original, t.flag_emoji, t.code AS team_code
+        $sql = 'SELECT p.*, t.name_cn AS team_name_cn, t.name_original AS team_name_original, t.flag_emoji, t.flag_url, t.code AS team_code
                 FROM players p
                 LEFT JOIN teams t ON t.id = p.team_id';
         if ($where) {
@@ -107,7 +124,7 @@ final class AppRepository
     {
         $column = is_numeric($id) ? 'p.id' : 'p.slug';
         $stmt = $this->pdo->prepare(
-            "SELECT p.*, t.name_cn AS team_name_cn, t.name_original AS team_name_original, t.flag_emoji, t.code AS team_code
+            "SELECT p.*, t.name_cn AS team_name_cn, t.name_original AS team_name_original, t.flag_emoji, t.flag_url, t.code AS team_code
              FROM players p
              LEFT JOIN teams t ON t.id = p.team_id
              WHERE {$column} = ? LIMIT 1"
@@ -122,8 +139,8 @@ final class AppRepository
     {
         $stmt = $this->pdo->prepare(
             'SELECT m.*,
-                    ht.name_cn AS home_name_cn, ht.name_original AS home_name_original, ht.flag_emoji AS home_flag, ht.code AS home_code,
-                    at.name_cn AS away_name_cn, at.name_original AS away_name_original, at.flag_emoji AS away_flag, at.code AS away_code,
+                    ht.name_cn AS home_name_cn, ht.name_original AS home_name_original, ht.flag_emoji AS home_flag, ht.flag_url AS home_flag_url, ht.code AS home_code,
+                    at.name_cn AS away_name_cn, at.name_original AS away_name_original, at.flag_emoji AS away_flag, at.flag_url AS away_flag_url, at.code AS away_code,
                     v.name_cn AS venue_name_cn, v.name_original AS venue_name_original
              FROM matches m
              LEFT JOIN teams ht ON ht.id = m.home_team_id
@@ -141,7 +158,7 @@ final class AppRepository
     public function standings(): array
     {
         $rows = $this->pdo->query(
-            'SELECT s.*, t.name_cn, t.name_original, t.flag_emoji, t.code
+            'SELECT s.*, t.name_cn, t.name_original, t.flag_emoji, t.flag_url, t.code
              FROM standings s
              JOIN teams t ON t.id = s.team_id
              ORDER BY s.group_name, s.points DESC, s.goal_difference DESC, s.goals_for DESC'
@@ -295,14 +312,15 @@ final class AppRepository
     {
         $slug = $team['slug'] ?? $this->slug((string) ($team['name_original'] ?? $team['name_cn'] ?? 'team'));
         $stmt = $this->pdo->prepare(
-            'INSERT INTO teams (fifa_id, slug, code, name_cn, name_original, country_code, flag_emoji, confederation, group_name, coach_name, world_ranking, profile, source_url, source_synced_at)
-             VALUES (:fifa_id, :slug, :code, :name_cn, :name_original, :country_code, :flag_emoji, :confederation, :group_name, :coach_name, :world_ranking, :profile, :source_url, NOW())
+            'INSERT INTO teams (fifa_id, slug, code, name_cn, name_original, country_code, flag_emoji, flag_url, confederation, group_name, coach_name, world_ranking, profile, source_url, source_synced_at)
+             VALUES (:fifa_id, :slug, :code, :name_cn, :name_original, :country_code, :flag_emoji, :flag_url, :confederation, :group_name, :coach_name, :world_ranking, :profile, :source_url, NOW())
              ON DUPLICATE KEY UPDATE
                code = COALESCE(VALUES(code), code),
                name_cn = COALESCE(VALUES(name_cn), name_cn),
                name_original = VALUES(name_original),
                country_code = COALESCE(VALUES(country_code), country_code),
                flag_emoji = COALESCE(VALUES(flag_emoji), flag_emoji),
+               flag_url = COALESCE(VALUES(flag_url), flag_url),
                confederation = COALESCE(VALUES(confederation), confederation),
                group_name = COALESCE(VALUES(group_name), group_name),
                coach_name = COALESCE(VALUES(coach_name), coach_name),
@@ -319,6 +337,7 @@ final class AppRepository
             'name_original' => $team['name_original'] ?? $team['name_cn'] ?? $slug,
             'country_code' => $team['country_code'] ?? null,
             'flag_emoji' => $team['flag_emoji'] ?? null,
+            'flag_url' => $team['flag_url'] ?? null,
             'confederation' => $team['confederation'] ?? null,
             'group_name' => $team['group_name'] ?? null,
             'coach_name' => $team['coach_name'] ?? null,
@@ -429,7 +448,80 @@ final class AppRepository
             'venue_id' => $match['venue_id'] ?? null,
             'source_url' => $match['source_url'] ?? null,
         ]);
-        return (int) ($this->pdo->lastInsertId() ?: 0);
+        $id = (int) $this->pdo->lastInsertId();
+        if ($id > 0) {
+            return $id;
+        }
+        $row = $this->one('SELECT id FROM matches WHERE external_id = ? LIMIT 1', [$match['external_id'] ?? null]);
+        return (int) ($row['id'] ?? 0);
+    }
+
+    public function upsertVenue(array $venue): int
+    {
+        $stmt = $this->pdo->prepare(
+            'INSERT INTO venues (fifa_id, name_cn, name_original, city_cn, city_original, country_code, capacity, source_url)
+             VALUES (:fifa_id, :name_cn, :name_original, :city_cn, :city_original, :country_code, :capacity, :source_url)
+             ON DUPLICATE KEY UPDATE
+               name_cn = COALESCE(VALUES(name_cn), name_cn),
+               name_original = VALUES(name_original),
+               city_cn = COALESCE(VALUES(city_cn), city_cn),
+               city_original = COALESCE(VALUES(city_original), city_original),
+               country_code = COALESCE(VALUES(country_code), country_code),
+               capacity = COALESCE(VALUES(capacity), capacity),
+               source_url = COALESCE(VALUES(source_url), source_url)'
+        );
+        $stmt->execute([
+            'fifa_id' => $venue['fifa_id'] ?? null,
+            'name_cn' => $venue['name_cn'] ?? null,
+            'name_original' => $venue['name_original'] ?? 'Unknown Venue',
+            'city_cn' => $venue['city_cn'] ?? null,
+            'city_original' => $venue['city_original'] ?? null,
+            'country_code' => $venue['country_code'] ?? null,
+            'capacity' => $venue['capacity'] ?? null,
+            'source_url' => $venue['source_url'] ?? null,
+        ]);
+
+        $id = (int) $this->pdo->lastInsertId();
+        if ($id > 0) {
+            return $id;
+        }
+        $row = $this->one('SELECT id FROM venues WHERE fifa_id = ? OR name_original = ? LIMIT 1', [$venue['fifa_id'] ?? null, $venue['name_original'] ?? null]);
+        return (int) ($row['id'] ?? 0);
+    }
+
+    public function upsertMatchStats(int $matchId, ?int $teamId, array $stats, ?string $sourceUrl = null): void
+    {
+        if (!$matchId || !$teamId) {
+            return;
+        }
+        $stmt = $this->pdo->prepare(
+            'INSERT INTO match_stats (match_id, team_id, possession, shots, shots_on_target, corners, fouls, yellow_cards, red_cards, expected_goals, source_url, source_synced_at)
+             VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, NOW())
+             ON DUPLICATE KEY UPDATE
+               possession = VALUES(possession),
+               shots = VALUES(shots),
+               shots_on_target = VALUES(shots_on_target),
+               corners = VALUES(corners),
+               fouls = VALUES(fouls),
+               yellow_cards = VALUES(yellow_cards),
+               red_cards = VALUES(red_cards),
+               expected_goals = VALUES(expected_goals),
+               source_url = COALESCE(VALUES(source_url), source_url),
+               source_synced_at = NOW()'
+        );
+        $stmt->execute([
+            $matchId,
+            $teamId,
+            $stats['possession'] ?? null,
+            $stats['shots'] ?? null,
+            $stats['shots_on_target'] ?? null,
+            $stats['corners'] ?? null,
+            $stats['fouls'] ?? null,
+            $stats['yellow_cards'] ?? null,
+            $stats['red_cards'] ?? null,
+            $stats['expected_goals'] ?? null,
+            $sourceUrl,
+        ]);
     }
 
     /** @param array<int, string> $tagSlugs */
@@ -505,7 +597,7 @@ final class AppRepository
     /** @return array<int, array<string, mixed>> */
     public function tableRows(string $table, int $limit = 80): array
     {
-        $allowed = ['teams', 'players', 'matches', 'news_articles', 'team_members', 'admin_posts', 'comments'];
+        $allowed = ['teams', 'players', 'matches', 'news_articles', 'team_members', 'admin_posts', 'comments', 'source_files', 'data_quality_checks', 'player_statistics', 'match_lineups', 'match_events'];
         if (!in_array($table, $allowed, true)) {
             return [];
         }
@@ -517,7 +609,7 @@ final class AppRepository
         $allowed = [
             'team_members' => ['name', 'student_no', 'role_name', 'bio', 'photo_url', 'sort_order', 'is_visible'],
             'admin_posts' => ['title', 'body', 'post_type', 'status', 'published_at'],
-            'teams' => ['code', 'name_cn', 'name_original', 'country_code', 'flag_emoji', 'confederation', 'group_name', 'coach_name', 'world_ranking', 'profile', 'source_url'],
+            'teams' => ['code', 'name_cn', 'name_original', 'country_code', 'flag_emoji', 'flag_url', 'confederation', 'group_name', 'coach_name', 'world_ranking', 'profile', 'source_url'],
             'players' => ['team_id', 'name_cn', 'name_original', 'position', 'shirt_number', 'birth_date', 'age', 'club', 'caps', 'goals', 'height_cm', 'photo_url', 'popularity_score', 'source_url'],
             'matches' => ['stage', 'group_name', 'home_team_id', 'away_team_id', 'home_team_name', 'away_team_name', 'home_score', 'away_score', 'status', 'starts_at', 'source_url'],
             'news_articles' => ['source_name', 'source_url', 'title_cn', 'title_original', 'summary_cn', 'summary_original', 'content_cn', 'content_original', 'language_code', 'published_at', 'credibility_score', 'translation_status'],

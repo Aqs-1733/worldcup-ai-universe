@@ -94,4 +94,4 @@ $pdo->prepare('INSERT IGNORE INTO user_roles (user_id, role_id) VALUES (?, ?)')-
 
 echo "Install complete.\n";
 echo "Admin: {$adminUsername}\n";
-echo "Next: php scripts/sync_worldcup.php && php scripts/sync_news.php\n";
+echo "Next: php scripts/import_collected_data.php && php scripts/fill_player_name_transliterations.php && php scripts/sync_news.php\n";

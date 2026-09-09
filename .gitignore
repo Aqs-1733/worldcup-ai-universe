@@ -19,5 +19,7 @@ storage/logs/*
 !storage/logs/.gitkeep
 storage/source_snapshots/*
 !storage/source_snapshots/.gitkeep
+storage/imports/*
+!storage/imports/.gitkeep
 public/uploads/*
 !public/uploads/.gitkeep

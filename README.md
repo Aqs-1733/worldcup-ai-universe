@@ -34,7 +34,8 @@ Copy-Item .env.example .env
 
 ```powershell
 php scripts/install.php
-php scripts/sync_worldcup.php
+php scripts/import_collected_data.php
+php scripts/fill_player_name_transliterations.php
 php scripts/sync_news.php
 php -S 127.0.0.1:8080 -t public public/index.php
 ```
@@ -43,7 +44,8 @@ php -S 127.0.0.1:8080 -t public public/index.php
 
 ```powershell
 D:\XAMPP\php\php.exe scripts\install.php
-D:\XAMPP\php\php.exe scripts\sync_worldcup.php
+D:\XAMPP\php\php.exe scripts\import_collected_data.php
+D:\XAMPP\php\php.exe scripts\fill_player_name_transliterations.php
 D:\XAMPP\php\php.exe scripts\sync_news.php
 D:\XAMPP\php\php.exe -S 127.0.0.1:8080 -t public public/index.php
 ```
@@ -87,21 +89,54 @@ POST https://ark.cn-beijing.volces.com/api/v3/images/generations
 
 ## 真实数据同步
 
-初始化只建立表、基础标签、来源和管理员，不伪造世界杯赛果。数据来自：
-
-- FIFA 官方球队、赛程、积分页面。
-- ESPN World Cup scoreboard API。
-- Wikipedia 2026 FIFA World Cup squads 页面。
-- BBC Sport、ESPN、The Guardian、Sky Sports、新华社体育等 RSS 新闻源。
-
-同步命令：
+初始化只建立表、基础标签、来源和管理员，不伪造世界杯赛果。老师验收用的完整数据导入脚本是：
 
 ```powershell
-php scripts/sync_worldcup.php
+php scripts/import_collected_data.php
+```
+
+如果使用 XAMPP：
+
+```powershell
+D:\XAMPP\php\php.exe scripts\import_collected_data.php
+```
+
+导入脚本会读取 `storage/imports/worldcup2026_complete_collection_kit`，把采集包里的 CSV/JSON 原始记录、球队、球员、赛程、赛果、阵容、事件、统计和校验结果全部写入 MySQL。当前完整导入结果：
+
+- 48 支球队。
+- 1248 名最终注册球员，每队 26 人。
+- 104 场比赛，阶段为小组赛 72 场、32 强 16 场、16 强 8 场、四分之一决赛 4 场、半决赛 2 场、季军赛 1 场、决赛 1 场。
+- 116341 条原始 CSV/JSON 记录入库。
+- 9 项自动校验全部通过，包含 Pochih/FIFA 与 Alamyy 赛果交叉检查 `0 mismatch`。
+- 全部球员都保留英文/原始姓名；源数据缺中文名时，可运行 `scripts/fill_player_name_transliterations.php` 用中文音译补齐展示名。
+
+核心数据来源：
+
+- FIFA 官方球队、赛程、积分页面。
+- Pochih WorldCup2026 赛程和官方名单快照。
+- Mominullptr FIFA World Cup 2026 Dataset。
+- Alamyy Worldcup26 比赛赛果和来源链接。
+- EbEmad FIFA-Data-Wc-2026 球员补充字段。
+- BBC Sport、ESPN、The Guardian、Sky Sports、新华社体育等 RSS 新闻源。
+
+新闻仍可联网刷新：
+
+```powershell
 php scripts/sync_news.php
 ```
 
-如果网络或来源失败，脚本会记录错误，不会填本地假数据。外文翻译依赖 `ARK_API_KEY` 和 `ARK_MODEL`，没配置时保留原文并标记待翻译。
+如果网络或来源失败，脚本会记录错误，不会填本地假数据。外文新闻翻译依赖 `ARK_API_KEY` 和 `ARK_MODEL`，没配置时保留原文并标记待翻译。
+
+`scripts/sync_worldcup.php` 保留为在线同步入口；课程验收建议优先使用 `scripts/import_collected_data.php`，因为它会导入采集包并写入数据质量检查表。
+
+如果火山方舟域名在本机 DNS 下解析失败，可以在 `.env` 里配置：
+
+```env
+ARK_DNS_FALLBACK_IP=方舟域名解析IP
+NO_PROXY=127.0.0.1,localhost,::1,ark.cn-beijing.volces.com
+```
+
+程序会对 `ark.cn-beijing.volces.com` 使用 DNS fallback，同时保留 HTTPS 主机名校验。
 
 ## GitHub 提交
 

@@ -1,5 +1,5 @@
 <section class="detail-hero reveal">
-  <div class="flag-hero"><?= e($player['flag_emoji'] ?: '★') ?></div>
+  <div class="flag-hero"><?= flag_html($player['flag_url'] ?? null, $player['flag_emoji'] ?? null, $player['team_name_cn'] ?: $player['team_name_original']) ?></div>
   <div>
     <span class="kicker"><?= e($player['team_code'] ?: 'PLAYER') ?></span>
     <h1><?= e(display_name($player['name_cn'], $player['name_original'])) ?></h1>

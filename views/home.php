@@ -32,9 +32,9 @@
       <?php else: ?>
         <?php foreach ($preview as $match): ?>
           <a class="bracket-node <?= e($match['status']) ?>" href="<?= e(url('/worldcup')) ?>">
-            <span><?= e(($match['home_flag'] ?? '') . ' ' . ($match['home_name_cn'] ?: $match['home_team_name'] ?: $match['home_name_original'] ?: '待定')) ?></span>
+            <span><?= team_name_html($match['home_flag_url'] ?? null, $match['home_flag'] ?? null, $match['home_name_cn'] ?? null, $match['home_team_name'] ?: ($match['home_name_original'] ?? null)) ?></span>
             <b><?= $match['home_score'] === null ? '-' : e($match['home_score']) ?></b>
-            <span><?= e(($match['away_flag'] ?? '') . ' ' . ($match['away_name_cn'] ?: $match['away_team_name'] ?: $match['away_name_original'] ?: '待定')) ?></span>
+            <span><?= team_name_html($match['away_flag_url'] ?? null, $match['away_flag'] ?? null, $match['away_name_cn'] ?? null, $match['away_team_name'] ?: ($match['away_name_original'] ?? null)) ?></span>
             <b><?= $match['away_score'] === null ? '-' : e($match['away_score']) ?></b>
           </a>
         <?php endforeach; ?>
@@ -53,6 +53,23 @@
   </div>
 </section>
 
+<?php if (!empty($qualityChecks)): ?>
+<section class="panel reveal">
+  <div class="section-head">
+    <div><span class="kicker">DATA CHECK</span><h2>真实数据校验</h2></div>
+    <span class="source-chip"><?= e(($counts['source_files'] ?? 0) . ' 个来源文件') ?></span>
+  </div>
+  <div class="quality-grid">
+    <?php foreach ($qualityChecks as $check): ?>
+      <div class="quality-chip <?= e($check['status']) ?>">
+        <strong><?= e($check['label']) ?></strong>
+        <span><?= e($check['actual_value']) ?> / <?= e($check['expected_value']) ?></span>
+      </div>
+    <?php endforeach; ?>
+  </div>
+</section>
+<?php endif; ?>
+
 <section class="dashboard-grid">
   <div class="panel reveal">
     <div class="section-head">
@@ -64,9 +81,9 @@
         <article class="match-row">
           <time><?= e(date_label($match['starts_at'])) ?></time>
           <div class="versus">
-            <span><?= e(($match['home_flag'] ?? '') . ' ' . ($match['home_name_cn'] ?: $match['home_team_name'] ?: $match['home_name_original'] ?: '待定')) ?></span>
+            <span><?= team_name_html($match['home_flag_url'] ?? null, $match['home_flag'] ?? null, $match['home_name_cn'] ?? null, $match['home_team_name'] ?: ($match['home_name_original'] ?? null)) ?></span>
             <b><?= $match['home_score'] === null ? 'vs' : e($match['home_score'] . ':' . $match['away_score']) ?></b>
-            <span><?= e(($match['away_flag'] ?? '') . ' ' . ($match['away_name_cn'] ?: $match['away_team_name'] ?: $match['away_name_original'] ?: '待定')) ?></span>
+            <span><?= team_name_html($match['away_flag_url'] ?? null, $match['away_flag'] ?? null, $match['away_name_cn'] ?? null, $match['away_team_name'] ?: ($match['away_name_original'] ?? null)) ?></span>
           </div>
           <small><?= e($match['stage']) ?> · <?= e($match['status']) ?></small>
         </article>
@@ -84,7 +101,7 @@
       <?php foreach (array_slice($standings ? array_merge(...array_values($standings)) : [], 0, 8) as $row): ?>
         <?php $width = min(100, max(8, (int) $row['points'] * 8)); ?>
         <div class="bar-line">
-          <span><?= e(($row['flag_emoji'] ?? '') . ' ' . ($row['name_cn'] ?: $row['name_original'])) ?></span>
+          <span><?= team_name_html($row['flag_url'] ?? null, $row['flag_emoji'] ?? null, $row['name_cn'] ?? null, $row['name_original'] ?? null) ?></span>
           <i style="--w: <?= e((string) $width) ?>%"></i>
           <b><?= e($row['points']) ?></b>
         </div>
@@ -122,7 +139,7 @@
     <div class="chip-grid">
       <?php foreach ($teams as $team): ?>
         <a class="team-chip" href="<?= e(url('/teams/' . $team['slug'])) ?>">
-          <span><?= e($team['flag_emoji'] ?: '◇') ?></span><?= e(display_name($team['name_cn'], $team['name_original'])) ?>
+          <?= team_name_html($team['flag_url'] ?? null, $team['flag_emoji'] ?? null, $team['name_cn'], $team['name_original']) ?>
         </a>
       <?php endforeach; ?>
       <?php if (!$teams): ?><div class="data-empty">同步球队后显示。</div><?php endif; ?>
@@ -137,7 +154,7 @@
     <div class="player-stack">
       <?php foreach ($players as $player): ?>
         <a class="player-row" href="<?= e(url('/players/' . $player['slug'])) ?>">
-          <span><?= e($player['flag_emoji'] ?: '◇') ?></span>
+          <?= flag_html($player['flag_url'] ?? null, $player['flag_emoji'] ?? null, $player['team_name_cn'] ?? '') ?>
           <b><?= e(display_name($player['name_cn'], $player['name_original'])) ?></b>
           <small><?= e($player['position'] ?: '位置待同步') ?> · <?= e($player['club'] ?: '俱乐部待同步') ?></small>
         </a>

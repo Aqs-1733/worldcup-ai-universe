@@ -11,7 +11,7 @@
     <a class="player-card" href="<?= e(url('/players/' . $player['slug'])) ?>">
       <span class="shirt"><?= e($player['shirt_number'] ?: '★') ?></span>
       <h2><?= e(display_name($player['name_cn'], $player['name_original'])) ?></h2>
-      <p><?= e(($player['flag_emoji'] ?: '') . ' ' . ($player['team_name_cn'] ?: $player['team_name_original'] ?: '球队待同步')) ?></p>
+      <p><?= team_name_html($player['flag_url'] ?? null, $player['flag_emoji'] ?? null, $player['team_name_cn'] ?? null, $player['team_name_original'] ?? null) ?></p>
       <div class="meta-row">
         <span><?= e($player['position'] ?: '位置待同步') ?></span>
         <span><?= e($player['club'] ?: '俱乐部待同步') ?></span>

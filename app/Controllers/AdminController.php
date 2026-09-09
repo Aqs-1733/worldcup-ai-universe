@@ -20,6 +20,11 @@ final class AdminController
         'news_articles' => '新闻',
         'admin_posts' => '发布内容',
         'comments' => '留言',
+        'source_files' => '来源文件',
+        'data_quality_checks' => '数据校验',
+        'player_statistics' => '球员统计',
+        'match_lineups' => '比赛阵容',
+        'match_events' => '比赛事件',
     ];
 
     public function dashboard(): string

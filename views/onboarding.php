@@ -9,7 +9,7 @@
     <h2>支持球队</h2>
     <div class="select-grid">
       <?php foreach ($teams as $team): ?>
-        <label><input type="checkbox" name="favorite_teams[]" value="<?= e($team['id']) ?>"><span><?= e(($team['flag_emoji'] ?: '◇') . ' ' . display_name($team['name_cn'], $team['name_original'])) ?></span></label>
+        <label><input type="checkbox" name="favorite_teams[]" value="<?= e($team['id']) ?>"><span><?= team_name_html($team['flag_url'] ?? null, $team['flag_emoji'] ?? null, $team['name_cn'], $team['name_original']) ?></span></label>
       <?php endforeach; ?>
     </div>
 
@@ -19,7 +19,7 @@
       <?php foreach ($players as $player): ?>
         <label data-filter-text="<?= e(display_name($player['name_cn'], $player['name_original']) . ' ' . ($player['team_name_cn'] ?? '') . ' ' . ($player['team_name_original'] ?? '')) ?>">
           <input type="checkbox" name="favorite_players[]" value="<?= e($player['id']) ?>">
-          <span><?= e(($player['flag_emoji'] ?: '◇') . ' ' . display_name($player['name_cn'], $player['name_original'])) ?></span>
+          <span><?= flag_html($player['flag_url'] ?? null, $player['flag_emoji'] ?? null, $player['team_name_cn'] ?? '') ?><?= e(display_name($player['name_cn'], $player['name_original'])) ?></span>
         </label>
       <?php endforeach; ?>
     </div>
@@ -27,7 +27,7 @@
     <h2>屏蔽球队消息</h2>
     <div class="select-grid">
       <?php foreach ($teams as $team): ?>
-        <label><input type="checkbox" name="blocked_teams[]" value="<?= e($team['id']) ?>"><span><?= e(($team['flag_emoji'] ?: '◇') . ' ' . display_name($team['name_cn'], $team['name_original'])) ?></span></label>
+        <label><input type="checkbox" name="blocked_teams[]" value="<?= e($team['id']) ?>"><span><?= team_name_html($team['flag_url'] ?? null, $team['flag_emoji'] ?? null, $team['name_cn'], $team['name_original']) ?></span></label>
       <?php endforeach; ?>
     </div>
 
